@@ -1,2 +1,3 @@
 name: Lani Huang
 markdown: kramdown
+permalink: /blog/:categories/:year/:month/:day/:title.html
