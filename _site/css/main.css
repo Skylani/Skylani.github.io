@@ -1,9 +1,9 @@
 body {
     margin: 60px auto;
-    width: 70%;
+    width: 750px;
+    font-family:"Microsoft Yahei","Hiragino Sans GB",Helvetica,"Helvetica Neue","微软雅黑",Tahoma,Arial,sans-serif;
 }
 nav ul, footer ul {
-    font-family:"Microsoft Yahei","Hiragino Sans GB",Helvetica,"Helvetica Neue","微软雅黑",Tahoma,Arial,sans-serif;
     padding: 0px;
     list-style: none;
     font-weight: bold;
@@ -21,7 +21,6 @@ a:hover {
 }
 h1 {
     font-size: 3em;
-    font-family:'Helvetica', 'Arial', 'Sans-Serif';
 }
 p {
     font-size: 1.5em;
