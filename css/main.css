@@ -1,7 +1,7 @@
 body {
     margin: 60px auto;
     width: 750px;
-    font-family: 'Arvo', "Microsoft Yahei", "微软雅黑", Georgia, serif;
+    font-family: 'merriweather','lora', Georgia, serif;
 }
 nav ul, footer ul {
     padding: 0px;
