@@ -37,6 +37,8 @@ There are two ways to update the firmware. The easy way is using Smart Switch, w
 1. Launch Odin and load recovery file to AP slot
 2. Connect phone and press start
 
+After updating the firmware, now I can flash any marshmallow custom ROM.
+
 ## Flash custom ROM, GApps, Xposed Framework
 Download custom ROM, [Open GApps](http://opengapps.org/) and [Xposed for Samsung](http://forum.xda-developers.com/xposed/unofficial-xposed-samsung-lollipop-t3180960)
 
