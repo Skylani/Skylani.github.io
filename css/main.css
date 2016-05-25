@@ -62,10 +62,15 @@ ul.posts li {
   footer {
       width: 85%;
   }
-  .blurb {
+  .container {
     font-size: .7em;
   }
   .blurb p {
     font-size: 1.9em;
+  }
+
+  ul.posts {
+    padding-left: 0;
+    font-size: 1.6em;
   }
 }
