@@ -35,7 +35,6 @@ p {
 }
 footer {
     border-top: 1px solid #d5d5d5;
-    font-size: .8em;
 }
 
 ul.posts {
@@ -54,11 +53,6 @@ ul.posts li {
 /************* Responsive ***************/
 
 @media (max-width: 768px) {
-  nav ul, footer ul {
-    font-size: 1.5em;
-
-  }
-
   .blurb {
     text-align: center;
     margin-top: 60px;
