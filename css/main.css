@@ -63,13 +63,6 @@ ul.posts li {
     text-align: center;
     margin-top: 60px;
   }
-}
-
-@media (max-width: 474px) {
-  nav ul, footer ul {
-    font-size: 1.2em;
-  }
-
   nav,
   .container,
   footer {
