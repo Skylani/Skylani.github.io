@@ -53,7 +53,7 @@ ul.posts li {
 
 /************* Responsive ***************/
 
-@media screen and (max-width: 768px) {
+@media (max-width: 768px) {
   nav ul, footer ul {
     font-size: 1.5em;
 
@@ -65,7 +65,7 @@ ul.posts li {
   }
 }
 
-@media screen and (max-width: 474px) {
+@media (max-width: 474px) {
   nav ul, footer ul {
     font-size: 1.2em;
   }
@@ -76,6 +76,6 @@ ul.posts li {
       width: 85%;
   }
   .blurb {
-    font-size: .7em;
+    font-size: .8em;
   }
 }
