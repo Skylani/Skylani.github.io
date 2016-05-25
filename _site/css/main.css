@@ -65,4 +65,7 @@ ul.posts li {
   .blurb {
     font-size: .7em;
   }
+  .blurb p {
+    font-size: 1.9em;
+  }
 }
