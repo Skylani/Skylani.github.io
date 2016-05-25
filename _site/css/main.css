@@ -65,7 +65,7 @@ ul.posts li {
   }
 }
 
-@media screen and (max-width: 420px) {
+@media screen and (max-width: 474px) {
   nav ul, footer ul {
     font-size: 1.2em;
   }
