@@ -2,9 +2,9 @@ name: Lani Huang
 # markdown: kramdown
 # highlighter: rouge
 permalink: /blog/:categories/:year/:month/:day/:title.html
-# gems:
-#   - jekyll-sitemap
-#   - jekyll-paginate
+gems:
+  - jekyll-sitemap
+  - jekyll-paginate
 
 kramdown:
   input: GFM
