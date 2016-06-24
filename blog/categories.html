@@ -1,6 +1,6 @@
 ---
 layout:   default
-title:    Category
+title:    Categories
 ---
 {% comment%}
 Here we generate all the categories.
@@ -35,20 +35,18 @@ Here we generate all the categories.
 <br/>
 
 <div class="posts">
-<p>
-{% for ct in cats %}
-<a href="#{{ ct | slugify }}" class="category-mark" style="color:#999;text-decoration: none;"> {{ ct }} </a> &nbsp;&nbsp;
-{% endfor %}
-<a href="#no-category" class="category-mark" style="color:#999;text-decoration: none;"> No Category </a> &nbsp;&nbsp;
-</p>
+  {% for ct in cats %}
+  <a href="#{{ ct | slugify }}" class="tag"> {{ ct }} </a> &nbsp;&nbsp;
+  {% endfor %}
+  <a href="#no-category" class="tag"> No Category </a> &nbsp;&nbsp;
 
 {% for ct in cats %}
 <h2 id="{{ ct | slugify }}">{{ ct }}</h2>
-<ul class="category-list">
+<ul class="post-list">
   {% for post in site.posts %}
   {% if post.category contains ct %}
   <li>
-    <h3>
+    <h3 class="post-url">
       <a href="{{ post.url }}">
         {{ post.title }}
         <small>{{ post.date | date_to_string }}</small>
@@ -61,11 +59,11 @@ Here we generate all the categories.
 {% endfor %}
 
 <h2 id="no-category">No Category</h2>
-<ul class="category-list">
+<ul class="post-list">
   {% for post in site.posts %}
   {% unless post.category %}
   <li>
-    <h3>
+    <h3 class="post-url">
       <a href="{{ post.url }}">
         {{ post.title }}
         <small>{{ post.date | date_to_string }}</small>
