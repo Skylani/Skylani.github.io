@@ -2,6 +2,8 @@
 layout: post
 title: "Finally, Updated My Samsung S6 to Android 6.0.1 Marshmallow"
 date: 2016-05-14
+category: Android
+tags: [marshmallow, samsungS6]
 ---
 
 I had been waiting for Marshmallow to come to my s6 for a long long time. This update doesn't have a lot of changes on the interface like the previous Lollipop version, which I still enjoy its new designing rules, Material Design. Actually, any updates to the Android system are exciting news for me. I love to learn those new funtionalities and use them to make life more convenient.

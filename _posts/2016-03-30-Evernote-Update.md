@@ -2,6 +2,7 @@
 layout: post
 title: "Evernote Update"
 date: 2016-03-30
+tags: [evernote]
 ---
 
 Today Evernote has updated. One of the new features is actually something I wish for a long time. It is the ability to zoom in or out a note. On my Macbook air, I can now easily do this by pinching two fingers on the trackpad and resize the whole note in a snap.
