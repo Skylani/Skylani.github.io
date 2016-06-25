@@ -1,4 +1,4 @@
-.highlight  { background: #eee; padding: 20px; font-family: Menlo, Consolas, Monaco, monospace; overflow: auto;}
+.highlight  { background: #eee; }
 .highlight .c { color: #999988; font-style: italic } /* Comment */
 .highlight .err { color: #a61717; background-color: #e3d2d2 } /* Error */
 .highlight .k { font-weight: bold; color: #B7302D; } /* Keyword */

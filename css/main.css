@@ -91,6 +91,11 @@ img {
   font-size: 18px;
   line-height: 2;
 }
+.highlight {
+  padding: 20px;
+  font-family: Menlo, Consolas, Monaco, monospace;
+  overflow: auto;
+}
 /* Page
 ======================*/
 .page-title {
