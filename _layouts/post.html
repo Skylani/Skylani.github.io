@@ -13,7 +13,7 @@ comments: true
   <div class="content">
     {{ page.content }}
   </div>
-  {% if page.tags.length > 0 %}
+  {% if page.tags.size > 0 %}
     <div class="tags">
       <span>Tags:</span>
       {% for tag in page.tags %}
