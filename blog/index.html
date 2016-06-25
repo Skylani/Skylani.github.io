@@ -10,7 +10,7 @@ title: Lani's Blog
     <div class="meta">
       <span class="date">{{ post.date | date_to_string }}</span>
       {% for ct in post.categories %}
-        <a class="meta-cat" href="/blog/categories/#{{ ct | slugify }}">{{ ct }}</a>
+        <a class="meta-cat" href="/blog/categories#{{ ct | slugify }}">{{ ct }}</a>
       {% endfor %}
     </div>
     <div class="content">
