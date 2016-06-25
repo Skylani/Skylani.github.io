@@ -22,7 +22,7 @@
         system "git checkout -B master"
         system "rm -rf *"
         system "mv #{tmp}/* ."
-        message = "Site updated at #{Time.now.utc}"
+        message = "Site updated at #{Time.now}"
         system "git add ."
         system "git commit -am #{message.shellescape}"
         system "git push origin master --force"

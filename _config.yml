@@ -12,4 +12,4 @@ kramdown:
 paginate:          5
 paginate_path:     'blog/page:num/'
 excerpt_separator: <!--more-->
-exclude:           ['Gemfile', 'Gemfile.lock', 'Rakefile']
+exclude:           ['Gemfile', 'Gemfile.lock', 'Rakefile', '.gitignore', '.ruby-gemset', '.ruby-version', '.rvmrc']
