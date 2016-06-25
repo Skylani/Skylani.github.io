@@ -1,4 +1,6 @@
 _site/
+.ruby-gemset
+.ruby-version
+.rvmrc
 
 !.gitignore
-!_site/sitemap.xml
