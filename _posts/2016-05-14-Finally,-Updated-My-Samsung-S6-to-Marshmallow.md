@@ -9,7 +9,7 @@ tags: [flashaholic]
 I had been waiting for Marshmallow to come to my s6 for a long long time. This update doesn't have a lot of changes on the interface like the previous Lollipop version, which I still enjoy its new designing rules, Material Design. Actually, any updates to the Android system are exciting news for me. I love to learn those new funtionalities and use them to make life more convenient.
 
 Other than updating the phone to the new Marshmallow firmware, I also rooted my phone, flash a custom recovery TWRP, a custom ROM, Google Apps and Xposed Framework.
-<!-- more -->
+<!--more-->
 
 There are two ways to update the firmware. The easy way is using Smart Switch, which can be downloaded from Samsung's website. The harder way is downloading the firmware and flash it to the phone using Odin.
 

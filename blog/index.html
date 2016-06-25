@@ -14,7 +14,9 @@ title: Lani's Blog
       {% endfor %}
     </div>
     <div class="content">
-      {{ post.content | split:"<!-- more -->" | first % }}
+      <!--{{ post.content | split:"" | first % }}-->
+      {{ post.excerpt }}
+
     </div>
     <div class="read-more">
       <a href="{{ site.baseurl }}{{ post.url }}">Read More</a>
@@ -29,7 +31,6 @@ title: Lani's Blog
   {% else %}
     <span class="newer">&laquo; Newer</span>
   {% endif %}
-  <!-- <span class="separator">|</span> -->
   {% if paginator.next_page %}
     <a href="{{ paginator.next_page_path }}" class="older">Older &raquo;</a>
   {% else %}
