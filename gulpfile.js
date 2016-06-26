@@ -3,9 +3,9 @@ var gulp = require('gulp'),
     autoprefixer = require('autoprefixer'),
     postcss = require('gulp-postcss'),
     browserSync = require('browser-sync').create(),
-    reload = browserSync.reload;
-    child = require('child_process');
-    gutil = require('gulp-util');
+    reload = browserSync.reload,
+    child = require('child_process'),
+    gutil = require('gulp-util'),
     concat = require('gulp-concat');
 
     cssFiles = '_css/*.?(s)css';
@@ -17,6 +17,7 @@ function errorlog(error) {
     this.emit('end');
 }
 
+// Jekyll task
 gulp.task('jekyll', function() {
     var jekyll = child.spawn('jekyll', ['serve',
         '--watch',
@@ -34,6 +35,7 @@ gulp.task('jekyll', function() {
     jekyll.stderr.on('data', jekyllLogger);
 });
 
+// Sass
 gulp.task('styles', function() {
     var processors = [
       autoprefixer({browsers:['last 2 version']})
@@ -50,6 +52,7 @@ gulp.task('styles', function() {
 
 });
 
+// Watch for changes
 gulp.task('watch', function() {
     browserSync.init({
         files: [siteRoot + '/**'],
@@ -62,4 +65,5 @@ gulp.task('watch', function() {
     gulp.watch(htmlFiles).on("change", reload);
 });
 
+// Default task
 gulp.task('default', ['styles', 'watch', 'jekyll']);
