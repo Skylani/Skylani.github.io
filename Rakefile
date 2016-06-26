@@ -7,7 +7,7 @@ require 'tmpdir'
 require 'jekyll'
 
 desc "Generate and publish blog to master"
-task :publish => [:generate] do
+task :publish do
   Dir.mktmpdir do |tmp|
     system "mv _site/* #{tmp}"
     system "git checkout master"

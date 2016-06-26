@@ -16,7 +16,6 @@ exclude:
   - Gemfile
   - Gemfile.lock
   - Rakefile
-  - .gitignore
   - .ruby-gemset
   - .ruby-version
   - .rvmrc

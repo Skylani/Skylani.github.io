@@ -44,10 +44,10 @@ gulp.task('styles', function() {
     gulp.src(cssFiles)
     .pipe(sass({
         outputStyle: 'compressed'
-    })).on('error', errorlog)
+    }))//.on('error', errorlog)
     .pipe(concat('all.css'))
     .pipe(postcss(processors))
-    .pipe(gulp.dest('./assets'))
+    .pipe(gulp.dest('assets'))
     .pipe(browserSync.stream());
 
 });
@@ -66,4 +66,4 @@ gulp.task('watch', function() {
 });
 
 // Default task
-gulp.task('default', ['styles', 'watch', 'jekyll']);
+gulp.task('default', ['styles', 'jekyll', 'watch']);
