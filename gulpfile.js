@@ -43,7 +43,7 @@ gulp.task('styles', function() {
 
     gulp.src(cssFiles)
     .pipe(sass({
-        outputStyle: 'compressed'
+        outputStyle: 'expanded'
     }))//.on('error', errorlog)
     .pipe(concat('all.css'))
     .pipe(postcss(processors))
