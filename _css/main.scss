@@ -47,7 +47,7 @@ h3 {
 }
 p {
   margin: 1.3em 0;
-  font-size: 1.2em;
+  font-size: 19px;
   line-height: 2;
 }
 img {
@@ -59,8 +59,12 @@ img {
     margin: 20px auto;
     list-style: initial;
     padding-left: 30px;
-    font-size: 18px;
+    font-size: 19px;
     line-height: 2;
+  }
+  a {
+    color: $black;
+    border-bottom: 1px solid $black;
   }
 }
 .highlight {
