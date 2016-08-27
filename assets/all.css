@@ -109,6 +109,12 @@ img {
 .content a {
   color: #333;
   border-bottom: 1px solid #333;
+  transition: all .4s ease;
+}
+
+.content a:hover {
+  color: #fff;
+  background-color: #333;
 }
 
 .highlight {
@@ -327,6 +333,34 @@ footer {
 
 .links-foot {
   padding: 10px 0;
+}
+
+.project-header {
+  text-align: center;
+}
+
+.project-description {
+  color: #999;
+}
+
+.screenshot {
+  width: 100%;
+  height: auto;
+}
+
+.btn-container {
+  text-align: center;
+  margin-bottom: 130px;
+  margin-top: 40px;
+}
+
+.btn {
+  display: inline-block;
+  width: 170px;
+  font-size: 19px;
+  padding: 13px 0;
+  border: 1px solid #333;
+  margin: 15px;
 }
 
 .post {

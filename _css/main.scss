@@ -65,6 +65,12 @@ img {
   a {
     color: $black;
     border-bottom: 1px solid $black;
+    transition: all .4s ease;
+
+    &:hover {
+      color: #fff;
+      background-color: $black;
+    }
   }
 }
 .highlight {
@@ -278,6 +284,35 @@ footer {
 .links-foot {
   padding: 10px 0;
 }
+
+// Projects ===================
+.project-header {
+  text-align: center;
+}
+.project-description {
+  color: $grey;
+}
+.screenshot {
+  width: 100%;
+  height: auto;
+}
+
+.btn-container {
+  text-align: center;
+  margin-bottom: 130px;
+  margin-top: 40px;
+}
+
+.btn {
+  display: inline-block;
+  width: 170px;
+  font-size: 19px;
+  padding: 13px 0;
+  border: 1px solid $black;
+  margin: 15px;
+}
+
+
 
 // Blog =======================
 .post {
