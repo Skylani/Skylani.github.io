@@ -335,6 +335,31 @@ footer {
   padding: 10px 0;
 }
 
+.project-list {
+  font-size: 2.5em;
+  margin-top: 50px;
+}
+
+.project-list a {
+  color: #333;
+  border-bottom: 1px solid #333;
+  transition: all .4s ease;
+}
+
+.project-list a:hover {
+  color: #fff;
+  background-color: #333;
+}
+
+.project-list li {
+  margin-bottom: 30px;
+}
+
+.project-list p {
+  color: #999;
+  margin: 0;
+}
+
 .project-header {
   text-align: center;
 }
