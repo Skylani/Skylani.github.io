@@ -11,7 +11,18 @@ $color-link: #FFF;
 $button-height: 27px;
 $button-width: 35px;
 
-@mixin catch_eye_link {
+@mixin word-wrap() {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  -ms-word-break: break-all;
+  word-break: break-word;
+  -ms-hyphens: auto;
+  -moz-hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+}
+
+@mixin content-link {
   a {
     color: $black;
     border-bottom: 1px solid $black;
@@ -24,21 +35,10 @@ $button-width: 35px;
   }
 }
 
-@mixin pretty_underline {
-  box-shadow: inset 0 -0.12em 0 0 #fff,
-    inset 0 -.14em 0 0 rgba(245, 245, 245, 0.5),
-    inset 0 -.14em 0 0 currentColor;
-  text-decoration: none;
-  text-shadow: .05em 0 #fff,
-    -0.05em 0 #fff,
-    1.5px 0 #fff,
-    -1.5px 0 #fff;
-}
-
 body {
   margin: 60px auto;
   width: 100%;
-  font-family: 'merriweather','lora', Georgia, serif;
+  font-family: 'merriweather', Georgia, serif;
   color: $black;
 }
 a {
@@ -52,11 +52,26 @@ h1, h2, h3, h4 {
 h1 {
   font-size: 3em;
 }
+@media (max-width: 468px) {
+  h1 {
+    font-size: 32px;
+  }
+}
 h2 {
-  font-size: 2em;
+  font-size: 32px;
+}
+@media (max-width: 468px) {
+  h2 {
+    font-size: 25px;
+  }
 }
 h3 {
-  font-size: 1.5em;
+  font-size: 20px;
+}
+@media (max-width: 468px) {
+  h3 {
+    font-size: 18px;
+  }
 }
 p {
   margin: 1.3em 0;
@@ -75,8 +90,16 @@ img {
     font-size: 19px;
     line-height: 2;
   }
-  @include catch_eye_link;
+  @include content-link;
 }
+@media (max-width: 468px) {
+  .content {
+    ul, ol {
+      font-size: 16px;
+    }
+  }
+}
+
 .highlight {
   padding: 20px;
   font-family: Menlo, Consolas, Monaco, monospace;
@@ -120,7 +143,7 @@ header {
   top: -50px;
 }
 
-.button_container {
+.button-container {
   position: absolute;
   top: 20px;
   right: 20px;
@@ -291,9 +314,10 @@ footer {
 
 // Projects ===================
 .project-list {
-  @include catch_eye_link;
+  @include content-link;
+  @include word-wrap;
   font-size: 2.5em;
-  margin-top: 50px;
+  margin: 50px 0 10px;
 
   li {
     margin-bottom: 30px;
@@ -348,22 +372,7 @@ footer {
 .post-title {
   margin-bottom: 10px;
   font-size: 35px;
-  a {
-    color: $black;
-
-    // pretty underline
-    &:hover {
-      @include pretty_underline;
-      // box-shadow: inset 0 -0.12em 0 0 #fff,
-      //   inset 0 -.14em 0 0 rgba(245, 245, 245, 0.5),
-      //   inset 0 -.14em 0 0 currentColor;
-      // text-decoration: none;
-      // text-shadow: .05em 0 #fff,
-      //   -0.05em 0 #fff,
-      //   1.5px 0 #fff,
-      //   -1.5px 0 #fff;
-    }
-  }
+  @include content-link;
 }
 .meta {
   margin-bottom: 30px;
@@ -425,6 +434,7 @@ footer {
 }
 // Responsive ==================
 
+
 @media (max-width: 768px) {
   .blurb {
     text-align: center;
@@ -441,5 +451,35 @@ footer {
   .blurb p {
     //font-size: 1.9em;
   }
+
+
+}
+
+@media (max-width: 468px) {
+  .site-title {
+    font-size: 2em;
+  }
+
+  // project list
+  .project-list {
+    font-size: 1.7em;
+  }
+
+  // blog
+  .post {
+    font-size: 1em;
+  }
+  .post-title {
+    font-size: 32px;
+  }
+  .meta {
+    font-size: 14px;
+  }
+  .content {
+    p {
+      font-size: 1em;
+    }
+  }
+
 
 }
