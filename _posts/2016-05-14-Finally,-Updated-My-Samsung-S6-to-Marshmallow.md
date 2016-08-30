@@ -31,7 +31,7 @@ There are two ways to update the firmware. The easy way is using Smart Switch, w
     - If fails, try different cables, restarting phone and computer, use a desktop computer (strong and stable current) or use Windows XP
 
 ## How to root Samsung s6 SM-G9200 (China version)
-0. Go to [CF-Auto-Root Repository](https://autoroot.chainfire.eu/#odin) and download the root file for SM-G9200
+0. Go to [CF-Auto-Root Repository](https://autoroot.chainfire.eu/#odin){:target="_blank"} and download the root file for SM-G9200
 1. Launch Odin and load the root file to AP slot
 2. Connect phone and press start
 
@@ -43,7 +43,7 @@ There are two ways to update the firmware. The easy way is using Smart Switch, w
 After updating the firmware, now I can flash any marshmallow custom ROM.
 
 ## Flash custom ROM, GApps, Xposed Framework
-Download custom ROM, [Open GApps](http://opengapps.org/) and [Xposed for Samsung](http://forum.xda-developers.com/xposed/unofficial-xposed-samsung-lollipop-t3180960)
+Download custom ROM, [Open GApps](http://opengapps.org/){:target="_blank"} and [Xposed for Samsung](http://forum.xda-developers.com/xposed/unofficial-xposed-samsung-lollipop-t3180960){:target="_blank"}
 
 Boot into recovery mode (vol up + power + home) and flash these zip files.
 
