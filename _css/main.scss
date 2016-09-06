@@ -1,7 +1,8 @@
 @import 'reset';
 // General ======================
 $black: #333;
-$grey: #999;
+$dark-grey: #555555;
+$grey: #999999;
 
 
 $color-background: #F5F5F5;
@@ -324,7 +325,7 @@ footer {
     margin-bottom: 30px;
   }
   p {
-    color: $grey;
+    color: $dark-grey;
     margin: 0;
   }
 }
