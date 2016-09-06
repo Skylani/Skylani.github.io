@@ -105,7 +105,7 @@ h3 {
   }
 }
 
-p {
+p, span {
   margin: 1.3em 0;
   font-size: 19px;
   line-height: 2;
@@ -117,7 +117,7 @@ img {
 }
 
 .content ul, .content ol {
-  margin: 20px auto;
+  margin: 10px auto 20px auto;
   list-style: initial;
   padding-left: 30px;
   font-size: 19px;
@@ -218,6 +218,7 @@ header {
 }
 
 .button-container span {
+  margin: 0;
   background: #333;
   border: none;
   height: 5px;
