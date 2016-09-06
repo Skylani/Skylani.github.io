@@ -58,8 +58,8 @@ html {
   box-sizing: inherit;
 }
 
-body {
-  margin: 60px auto;
+html, body {
+  height: 100%;
   width: 100%;
   font-family: 'merriweather', Georgia, serif;
   color: #333;
@@ -72,7 +72,7 @@ a {
 
 h1, h2, h3, h4 {
   font-weight: bold;
-  margin: 2em 0 0.4em;
+  padding: 2em 0 0.4em;
 }
 
 h1 {
@@ -148,7 +148,7 @@ img {
 }
 
 .page-title {
-  margin-top: 20px;
+  padding-top: 50px;
 }
 
 .post-url {
@@ -347,13 +347,35 @@ header {
   padding-right: 15px;
 }
 
+.container {
+  min-height: 100%;
+  margin-bottom: -44px;
+}
+
+.container:after {
+  content: "";
+  display: block;
+}
+
+.blurb {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+footer, .container:after {
+  /* .push must be the same height as footer */
+  height: 44px;
+}
+
 .site-title {
   margin-bottom: 20px;
+  margin-top: 0;
+  padding: 0;
 }
 
 footer {
   border-top: 1px solid #d5d5d5;
-  margin-top: 80px;
 }
 
 .links-foot {
@@ -457,10 +479,6 @@ footer {
   margin-left: 10px;
 }
 
-.content {
-  margin-top: 20px;
-}
-
 .read-more {
   text-align: right;
   margin-top: 20px;
@@ -468,6 +486,7 @@ footer {
 
 .pagination {
   text-align: center;
+  margin-bottom: 124px;
 }
 
 .older, .newer {
@@ -507,6 +526,7 @@ footer {
 
 .posts-nav {
   margin-top: 80px;
+  margin-bottom: 80px;
 }
 
 .posts-nav:after {
@@ -516,10 +536,6 @@ footer {
 }
 
 @media (max-width: 768px) {
-  .blurb {
-    text-align: center;
-    margin-top: 60px;
-  }
   nav,
   .container,
   footer {

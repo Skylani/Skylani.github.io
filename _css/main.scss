@@ -36,8 +36,9 @@ $button-width: 35px;
   }
 }
 
-body {
-  margin: 60px auto;
+html, body {
+  height: 100%;
+  // margin: 60px auto;
   width: 100%;
   font-family: 'merriweather', Georgia, serif;
   color: $black;
@@ -48,7 +49,7 @@ a {
 }
 h1, h2, h3, h4 {
   font-weight: bold;
-  margin: 2em 0 0.4em;
+  padding: 2em 0 0.4em;
 }
 h1 {
   font-size: 3em;
@@ -108,7 +109,7 @@ img {
 }
 // Page ======================
 .page-title {
-  margin-top: 20px;
+  padding-top: 50px;
 }
 .post-url {
   font-size: 1.1em;
@@ -302,13 +303,44 @@ header {
   }
 }
 
+.container {
+  // position: absolute;
+  // top: 50%;
+  // left: 50%;
+  // margin-right: -50%;
+  // transform: translate(-50%, -50%);
+  min-height: 100%;
+  margin-bottom: -44px;
+
+  &:after {
+    content: "";
+    display: block;
+  }
+}
+
+.blurb {
+  // align-items: stretch;
+  position: absolute;
+  top: 50%;
+  // left: 50%;
+  // margin-right: -50%;
+  transform: translateY(-50%);
+}
+
+footer, .container:after {
+  /* .push must be the same height as footer */
+    height: 44px;
+}
+
 .site-title {
   margin-bottom: 20px;
+  margin-top: 0;
+  padding: 0;
 }
 
 footer {
   border-top: 1px solid #d5d5d5;
-  margin-top: 80px;
+  // margin-top: 80px;
 }
 .links-foot {
   padding: 10px 0;
@@ -383,7 +415,7 @@ footer {
   margin-left: 10px;
 }
 .content {
-  margin-top: 20px;
+  // padding-top: 20px;
 }
 .read-more {
   text-align: right;
@@ -394,6 +426,7 @@ footer {
 // Blog Pagination
 .pagination {
   text-align: center;
+  margin-bottom: 124px;
 }
 .older, .newer{
   font-size: 20px;
@@ -427,6 +460,7 @@ footer {
 }
 .posts-nav {
   margin-top: 80px;
+  margin-bottom: 80px;
   // Fix collapsing
   &:after {
     content: "";
@@ -438,23 +472,11 @@ footer {
 
 
 @media (max-width: 768px) {
-  .blurb {
-    text-align: center;
-    margin-top: 60px;
-  }
   nav,
   .container,
   footer {
       width: 85%;
   }
-  .container {
-    //font-size: 11px;
-  }
-  .blurb p {
-    //font-size: 1.9em;
-  }
-
-
 }
 
 @media (max-width: 468px) {
