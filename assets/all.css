@@ -67,7 +67,7 @@ body {
 
 a {
   text-decoration: none;
-  color: #999;
+  color: #999999;
 }
 
 h1, h2, h3, h4 {
@@ -164,7 +164,7 @@ small {
 
 .post-list li:before {
   content: "\00BB\0020";
-  color: #999;
+  color: #999999;
 }
 
 nav,
@@ -388,7 +388,7 @@ footer {
 }
 
 .project-list p {
-  color: #999;
+  color: #555555;
   margin: 0;
 }
 
@@ -397,7 +397,7 @@ footer {
 }
 
 .project-description {
-  color: #999;
+  color: #999999;
 }
 
 .screenshot {
