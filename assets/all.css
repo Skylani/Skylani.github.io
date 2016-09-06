@@ -252,7 +252,7 @@ header {
 }
 
 .overlay.open {
-  opacity: .9;
+  opacity: 1;
   visibility: visible;
   height: 100%;
 }
