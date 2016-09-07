@@ -38,7 +38,6 @@ $button-width: 35px;
 
 html, body {
   height: 100%;
-  // margin: 60px auto;
   width: 100%;
   font-family: 'merriweather', Georgia, serif;
   color: $black;
@@ -108,8 +107,11 @@ img {
   overflow: auto;
 }
 // Page ======================
+.page {
+  margin-bottom: 80px;
+}
 .page-title {
-  padding-top: 50px;
+  padding-top: 60px;
 }
 .post-url {
   @include content-link;
@@ -468,7 +470,7 @@ footer {
   nav,
   .container,
   footer {
-      width: 85%;
+    width: 85%;
   }
 }
 
@@ -489,7 +491,7 @@ footer {
   .post-title {
     font-size: 32px;
   }
-  .meta {
+  .date, .meta {
     font-size: 14px;
   }
   .content {

@@ -147,8 +147,12 @@ img {
   overflow: auto;
 }
 
+.page {
+  margin-bottom: 80px;
+}
+
 .page-title {
-  padding-top: 50px;
+  padding-top: 60px;
 }
 
 .post-url {
@@ -571,7 +575,7 @@ footer {
   .post-title {
     font-size: 32px;
   }
-  .meta {
+  .date, .meta {
     font-size: 14px;
   }
   .content p, .content span {
