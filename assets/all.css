@@ -147,14 +147,30 @@ img {
   overflow: auto;
 }
 
+.page {
+  margin-bottom: 80px;
+}
+
 .page-title {
-  padding-top: 50px;
+  padding-top: 60px;
 }
 
 .post-url {
   font-size: 1.1em;
   margin: 10px auto;
   display: inline;
+  padding: 0;
+}
+
+.post-url a {
+  color: #333;
+  border-bottom: 1px solid #333;
+  transition: all .4s ease;
+}
+
+.post-url a:hover {
+  color: #fff;
+  background-color: #333;
 }
 
 small {
@@ -165,6 +181,10 @@ small {
 .post-list li:before {
   content: "\00BB\0020";
   color: #999999;
+}
+
+.post-list:last-of-type {
+  margin-bottom: 80px;
 }
 
 nav,
@@ -508,7 +528,6 @@ footer {
 .tag {
   font-weight: normal;
   background-color: #eee;
-  padding: 2px 5px;
 }
 
 .next, .prev {
@@ -556,7 +575,7 @@ footer {
   .post-title {
     font-size: 32px;
   }
-  .meta {
+  .date, .meta {
     font-size: 14px;
   }
   .content p, .content span {
