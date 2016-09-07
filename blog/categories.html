@@ -36,9 +36,9 @@ Here we generate all the categories.
 
 <div class="posts">
   {% for ct in cats %}
-  <a href="#{{ ct | slugify }}" class="tag"> {{ ct }} </a> &nbsp;&nbsp;
+  <a href="#{{ ct | slugify }}" class="tag">{{ ct }}</a> &nbsp;&nbsp;
   {% endfor %}
-  <a href="#no-category" class="tag"> No Category </a> &nbsp;&nbsp;
+  <a href="#no-category" class="tag">No Category</a> &nbsp;&nbsp;
 
 {% for ct in cats %}
 <h2 id="{{ ct | slugify }}">{{ ct }}</h2>
