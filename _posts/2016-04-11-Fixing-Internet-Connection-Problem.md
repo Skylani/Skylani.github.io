@@ -2,6 +2,7 @@
 layout: post
 title: "Fixing Internet Connection Problem"
 date: 2016-04-11
+category: Tech
 tags: [windows]
 ---
 

@@ -2,6 +2,7 @@
 layout: post
 title: "Evernote Update"
 date: 2016-03-30
+category: Tech
 tags: [evernote]
 ---
 

@@ -2,7 +2,7 @@
 layout: post
 title: "Waterfall Hike"
 date: 2016-04-07
-category: Life
+category: Lifestyle
 tags: [hiking, photography]
 ---
 
