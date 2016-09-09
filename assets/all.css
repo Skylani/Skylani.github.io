@@ -68,6 +68,11 @@ html, body {
 a {
   text-decoration: none;
   color: #999999;
+  transition: all .4s ease;
+}
+
+a:hover {
+  color: #333;
 }
 
 h1, h2, h3, h4 {
@@ -127,7 +132,6 @@ img {
 .content a {
   color: #333;
   border-bottom: 1px solid #333;
-  transition: all .4s ease;
 }
 
 .content a:hover {
@@ -165,7 +169,6 @@ img {
 .post-url a {
   color: #333;
   border-bottom: 1px solid #333;
-  transition: all .4s ease;
 }
 
 .post-url a:hover {
@@ -417,7 +420,6 @@ footer {
 .project-list a {
   color: #333;
   border-bottom: 1px solid #333;
-  transition: all .4s ease;
 }
 
 .project-list a:hover {
@@ -483,7 +485,6 @@ footer {
 .post-title a {
   color: #333;
   border-bottom: 1px solid #333;
-  transition: all .4s ease;
 }
 
 .post-title a:hover {
