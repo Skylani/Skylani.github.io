@@ -19,7 +19,7 @@ function errorlog(error) {
 
 // Jekyll task
 gulp.task('jekyll', function() {
-    var jekyll = child.spawn('jekyll', ['serve',
+    var jekyll = child.spawn('jekyll', ['build',
         '--watch',
         '--incremental',
         '--drafts'
