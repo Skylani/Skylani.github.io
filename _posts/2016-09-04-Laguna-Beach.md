@@ -10,14 +10,14 @@ Have fun at Laguna Beach. Good views with good friends.
 
 <!--more-->
 
-![](/assets/blog_img/men_beach.jpg)
+![](/assets/images/blog/men_beach.jpg)
 
-![](/assets/blog_img/laguna_beach.jpg)
+![](/assets/images/blog/laguna_beach.jpg)
 
-![](/assets/blog_img/laguna_beach_with_rocks.jpg)
+![](/assets/images/blog/laguna_beach_with_rocks.jpg)
 
-![](/assets/blog_img/plant_ocean.jpg)
+![](/assets/images/blog/plant_ocean.jpg)
 
-![](/assets/blog_img/friend_walking_on_the_beach.jpg)
+![](/assets/images/blog/friend_walking_on_the_beach.jpg)
 
-![](/assets/blog_img/four_friends_and_me.jpg)
+![](/assets/images/blog/four_friends_and_me.jpg)
