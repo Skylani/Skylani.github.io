@@ -529,6 +529,14 @@ footer {
 .tag {
   font-weight: normal;
   background-color: #eee;
+  margin-right: 10px;
+  padding: 0 2px;
+  white-space: nowrap;
+}
+
+.tag:hover {
+  color: #fff;
+  background-color: #999999;
 }
 
 .next, .prev {
