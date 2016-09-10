@@ -6,10 +6,10 @@ var gulp = require('gulp'),
     reload = browserSync.reload,
     child = require('child_process'),
     gutil = require('gulp-util'),
-    concat = require('gulp-concat');
+    concat = require('gulp-concat'),
 
-    cssFiles = '_css/*.?(s)css';
-    siteRoot = '_site';
+    cssFiles = '_css/*.?(s)css',
+    siteRoot = '_site',
     htmlFiles = '_site/**/*.html';
 
 function errorlog(error) {
@@ -35,7 +35,7 @@ gulp.task('jekyll', function() {
     jekyll.stderr.on('data', jekyllLogger);
 });
 
-// Sass
+// CSS
 gulp.task('styles', function() {
     var processors = [
       autoprefixer({browsers:['last 2 version']})
@@ -43,13 +43,12 @@ gulp.task('styles', function() {
 
     gulp.src(cssFiles)
     .pipe(sass({
-        outputStyle: 'expanded'
-    }))//.on('error', errorlog)
+        outputStyle: 'compressed'
+    })).on('error', errorlog)
     .pipe(concat('all.css'))
     .pipe(postcss(processors))
     .pipe(gulp.dest('assets'))
     .pipe(browserSync.stream());
-
 });
 
 // Watch for changes
