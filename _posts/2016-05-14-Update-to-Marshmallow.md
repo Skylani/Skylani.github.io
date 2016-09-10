@@ -1,15 +1,15 @@
 ---
 layout: post
-title: "Finally, Updated My Samsung S6 to Android 6.0.1 Marshmallow"
+title: "Update to Android 6.0.1 Marshmallow"
 date: 2016-05-14
 category: Android
 tags: [flashaholic]
 ---
 
 I had been waiting for Marshmallow to come to my s6 for a long long time. This update doesn't have a lot of changes on the interface like the previous Lollipop version, which I still enjoy its new designing rules, Material Design. Actually, any updates to the Android system are exciting news for me. I love to learn those new funtionalities and use them to make life more convenient.
+<!--more-->
 
 Other than updating the phone to the new Marshmallow firmware, I also rooted my phone, flash a custom recovery TWRP, a custom ROM, Google Apps and Xposed Framework.
-<!--more-->
 
 There are two ways to update the firmware. The easy way is using Smart Switch, which can be downloaded from Samsung's website. The harder way is downloading the firmware and flash it to the phone using Odin.
 
@@ -47,7 +47,9 @@ Download custom ROM, [Open GApps](http://opengapps.org/){:target="_blank"} and [
 
 Boot into recovery mode (vol up + power + home) and flash these zip files.
 
-### Fixing force close problem
+## Troubleshoot
+
+### Force close
 For me there is force close issue after installing GApps because these GApps don't have any permissions. Go into the settings and give these GApps all the permissions they need. This should fix force close.
 
 Booting after flashing GApps, the setup wizard also force closes and prevents launcher to load. In order to run any apps after fixing GApps permissions, here are the steps I took from the begining:
@@ -63,7 +65,12 @@ Booting after flashing GApps, the setup wizard also force closes and prevents la
 10. Swiftopen a launcher
 11. No more force close!
 
-### Fixing Google Contacts not syncing
+### Google Contacts not syncing
 1. Go to Settings -> Applicaiton -> Application manager, tap "More" and select "Show system apps"
 2. Give Google contact sync all permissions
 
+### Cannot install .apk
+
+1. settings -> applications (show system apps)
+2. Find Package installer
+3. Give permission
