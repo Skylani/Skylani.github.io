@@ -3,6 +3,7 @@
 $black: #333;
 $dark-grey: #555555;
 $grey: #999999;
+$section-title-size: 35px;
 
 
 $color-background: #F5F5F5;
@@ -38,7 +39,7 @@ $button-width: 35px;
 html, body {
   height: 100%;
   width: 100%;
-  font-family: 'merriweather', Georgia, serif;
+  font-family: 'merriweather', 'Microsoft YaHei', 'Hiragino Sans GB', sans-serif;
   color: $black;
 }
 a {
@@ -335,6 +336,9 @@ header, header.headroom--bottom {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
+  a {
+    font-size: 100%;
+  }
 }
 
 footer, .container:after {
@@ -356,21 +360,34 @@ footer {
 }
 
 // Projects ===================
-.project-list {
-  @include content-link;
-  @include word-wrap;
-  font-size: 2.5em;
-  margin: 50px 0 10px;
+.projects {
+  ul {
+    @include content-link;
+    @include word-wrap;
+    margin: 50px 0 10px;
+    list-style: none;
+    padding: 0;
 
-  li {
-    margin-bottom: 30px;
-  }
-  p {
-    color: $dark-grey;
-    margin: 0;
+    li {
+      margin-bottom: 30px;
+    }
+    p {
+      color: $dark-grey;
+      margin: 0;
+    }
   }
 }
+.project-title {
+  padding: 0;
+  font-weight: normal;
+  font-size: 40px;
+}
 
+.small-project {
+  margin-bottom: 130px;
+  margin-top: 40px;
+
+}
 
 .project-header {
   text-align: center;
@@ -385,40 +402,31 @@ footer {
 
 .btn-container {
   text-align: center;
-  margin-bottom: 130px;
-  margin-top: 40px;
+  margin-bottom: 60px;
+  margin-top: 20px;
 }
 
 .btn {
   display: inline-block;
-  width: 170px;
+  width: 200px;
   font-size: 19px;
   padding: 13px 0;
   border: 1px solid $black;
+}
+
+.multiple-btns{
   margin: 15px;
 }
 
-.btn-container.single{
-  margin-bottom: 60px;
-  margin-top: 0;
-
-  .btn {
-    width: 200px;
-  }
-}
-
-.btn-container.resume {
-  margin-bottom: 60px;
-  .btn {
-    width: 300px;
-  }
+.resume-btn {
+  width: 300px;
 }
 
 // Blog =======================
 .post {
   margin-bottom: 80px;
 }
-.post-title {
+.article-title {
   margin-bottom: 10px;
   font-size: 35px;
   @include content-link;
@@ -497,14 +505,35 @@ footer {
 }
 
 @media (max-width: 468px) {
-  .site-title {
-    font-size: 2em;
+  .content {
+    p, span, a {
+      font-size: 16px;
+    }
   }
 
-  // project list
-  .project-list {
-    font-size: 1.7em;
+  .site-title {
+    font-size: 2em;
+    a {
+      font-size: 1em;
+    }
   }
+
+  .btn {
+    width: 100%;
+    padding: 10px 0;
+  }
+  .multiple-btns{
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  // projects
+  .project-title {
+    a {
+      font-size: 30px!important;
+    }
+  }
+
 
   // blog
   .post {
@@ -516,9 +545,5 @@ footer {
   .date, .meta {
     font-size: 14px;
   }
-  .content {
-    p, span {
-      font-size: 1em;
-    }
-  }
+
 }
