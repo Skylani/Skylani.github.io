@@ -50,6 +50,78 @@
 <h3>I'm Lazy, so I learn Gulp</h3>
 <p>As I develop this site, I came across so many inconvenience that led me to learn to use a build system, Gulp. After some googling and watching some YouTube videos, I can streamline the build process by automatically adding vendor prefixes, reloading browser when files are changed and etc.</p>
 
+<p>Here's my Gulp setting file that does the magic.</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">gulp</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'gulp'</span><span class="p">),</span>
+    <span class="nx">sass</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'gulp-sass'</span><span class="p">),</span>
+    <span class="nx">autoprefixer</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'autoprefixer'</span><span class="p">),</span>
+    <span class="nx">postcss</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'gulp-postcss'</span><span class="p">),</span>
+    <span class="nx">browserSync</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'browser-sync'</span><span class="p">).</span><span class="nx">create</span><span class="p">(),</span>
+    <span class="nx">reload</span> <span class="o">=</span> <span class="nx">browserSync</span><span class="p">.</span><span class="nx">reload</span><span class="p">,</span>
+    <span class="nx">child</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'child_process'</span><span class="p">),</span>
+    <span class="nx">gutil</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'gulp-util'</span><span class="p">),</span>
+    <span class="nx">concat</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'gulp-concat'</span><span class="p">),</span>
+
+    <span class="nx">cssFiles</span> <span class="o">=</span> <span class="s1">'_css/*.?(s)css'</span><span class="p">,</span>
+    <span class="nx">siteRoot</span> <span class="o">=</span> <span class="s1">'_site'</span><span class="p">,</span>
+    <span class="nx">htmlFiles</span> <span class="o">=</span> <span class="s1">'_site/**/*.html'</span><span class="p">;</span>
+
+<span class="kd">function</span> <span class="nx">errorlog</span><span class="p">(</span><span class="nx">error</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">.</span><span class="nx">bind</span><span class="p">(</span><span class="nx">error</span><span class="p">);</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">emit</span><span class="p">(</span><span class="s1">'end'</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="c1">// Jekyll task</span>
+<span class="nx">gulp</span><span class="p">.</span><span class="nx">task</span><span class="p">(</span><span class="s1">'jekyll'</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">jekyll</span> <span class="o">=</span> <span class="nx">child</span><span class="p">.</span><span class="nx">spawn</span><span class="p">(</span><span class="s1">'jekyll'</span><span class="p">,</span> <span class="p">[</span><span class="s1">'build'</span><span class="p">,</span>
+        <span class="s1">'--watch'</span><span class="p">,</span>
+        <span class="s1">'--incremental'</span><span class="p">,</span>
+        <span class="s1">'--drafts'</span>
+    <span class="p">]);</span>
+
+    <span class="kd">var</span> <span class="nx">jekyllLogger</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">buffer</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">buffer</span><span class="p">.</span><span class="nx">toString</span><span class="p">()</span>
+        <span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="sr">/</span><span class="se">\n</span><span class="sr">/</span><span class="p">)</span>
+        <span class="p">.</span><span class="nx">forEach</span><span class="p">((</span><span class="nx">message</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">gutil</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'Jekyll: '</span> <span class="o">+</span> <span class="nx">message</span><span class="p">));</span>
+    <span class="p">};</span>
+
+    <span class="nx">jekyll</span><span class="p">.</span><span class="nx">stdout</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">'data'</span><span class="p">,</span> <span class="nx">jekyllLogger</span><span class="p">);</span>
+    <span class="nx">jekyll</span><span class="p">.</span><span class="nx">stderr</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">'data'</span><span class="p">,</span> <span class="nx">jekyllLogger</span><span class="p">);</span>
+<span class="p">});</span>
+
+<span class="c1">// CSS</span>
+<span class="nx">gulp</span><span class="p">.</span><span class="nx">task</span><span class="p">(</span><span class="s1">'styles'</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">processors</span> <span class="o">=</span> <span class="p">[</span>
+      <span class="nx">autoprefixer</span><span class="p">({</span><span class="na">browsers</span><span class="p">:[</span><span class="s1">'last 2 version'</span><span class="p">]})</span>
+    <span class="p">];</span>
+
+    <span class="nx">gulp</span><span class="p">.</span><span class="nx">src</span><span class="p">(</span><span class="nx">cssFiles</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">sass</span><span class="p">({</span>
+        <span class="na">outputStyle</span><span class="p">:</span> <span class="s1">'compressed'</span>
+    <span class="p">})).</span><span class="nx">on</span><span class="p">(</span><span class="s1">'error'</span><span class="p">,</span> <span class="nx">errorlog</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">concat</span><span class="p">(</span><span class="s1">'all.css'</span><span class="p">))</span>
+    <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">postcss</span><span class="p">(</span><span class="nx">processors</span><span class="p">))</span>
+    <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">gulp</span><span class="p">.</span><span class="nx">dest</span><span class="p">(</span><span class="s1">'assets'</span><span class="p">))</span>
+    <span class="p">.</span><span class="nx">pipe</span><span class="p">(</span><span class="nx">browserSync</span><span class="p">.</span><span class="nx">stream</span><span class="p">());</span>
+<span class="p">});</span>
+
+<span class="c1">// Watch for changes</span>
+<span class="nx">gulp</span><span class="p">.</span><span class="nx">task</span><span class="p">(</span><span class="s1">'watch'</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nx">browserSync</span><span class="p">.</span><span class="nx">init</span><span class="p">({</span>
+        <span class="na">files</span><span class="p">:</span> <span class="p">[</span><span class="nx">siteRoot</span> <span class="o">+</span> <span class="s1">'/**'</span><span class="p">],</span>
+        <span class="na">port</span><span class="p">:</span> <span class="mi">4000</span><span class="p">,</span>
+        <span class="na">server</span><span class="p">:</span> <span class="p">{</span>
+            <span class="na">baseDir</span><span class="p">:</span> <span class="nx">siteRoot</span>
+        <span class="p">}</span>
+    <span class="p">});</span>
+    <span class="nx">gulp</span><span class="p">.</span><span class="nx">watch</span><span class="p">(</span><span class="nx">cssFiles</span><span class="p">,</span> <span class="p">[</span><span class="s1">'styles'</span><span class="p">]);</span>
+    <span class="nx">gulp</span><span class="p">.</span><span class="nx">watch</span><span class="p">(</span><span class="nx">htmlFiles</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s2">"change"</span><span class="p">,</span> <span class="nx">reload</span><span class="p">);</span>
+<span class="p">});</span>
+
+<span class="c1">// Default task</span>
+<span class="nx">gulp</span><span class="p">.</span><span class="nx">task</span><span class="p">(</span><span class="s1">'default'</span><span class="p">,</span> <span class="p">[</span><span class="s1">'styles'</span><span class="p">,</span> <span class="s1">'jekyll'</span><span class="p">,</span> <span class="s1">'watch'</span><span class="p">]);</span></code></pre></figure>
+
+
 <h3>Tools</h3>
 
   <ul>
