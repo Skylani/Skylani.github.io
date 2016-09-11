@@ -6,7 +6,7 @@ title: Lani's Blog
 <!-- This loops through the paginated posts -->
 {% for post in paginator.posts %}
   <article class="post">
-    <h1 class="article-title"><a href="{{ post.url }}" data-underline>{{ post.title }}</a></h1>
+    <h1 class="post-title"><a href="{{ post.url }}" data-underline>{{ post.title }}</a></h1>
     <div class="meta">
       <span class="date">{{ post.date | date_to_string }}</span>
       {% for ct in post.categories %}
