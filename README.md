@@ -1,2 +1,2 @@
 # lanihuang.com
-### Where I speak to myself
+My personal website.
