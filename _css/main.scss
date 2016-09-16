@@ -371,6 +371,7 @@ footer {
     li {
       margin-bottom: 30px;
     }
+
     p {
       color: $dark-grey;
       margin: 0;
@@ -541,6 +542,12 @@ footer {
   }
 
   // projects
+  .projects{
+    ul {
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+  }
   .project-title {
     a {
       font-size: 30px!important;
