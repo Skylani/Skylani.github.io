@@ -379,6 +379,14 @@ footer {
   padding: 10px 0;
 }
 
+// About ======================
+#lani {
+  float: right;
+  width: 150px;
+  height: 150px;
+  margin: 20px 10px 30px 40px;
+}
+
 // Projects ===================
 .projects {
   ul {
@@ -588,5 +596,13 @@ footer {
   }
   .tags span {
     font-size: 16px;
+  }
+
+  // about
+  #lani {
+    float: none;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
