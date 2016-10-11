@@ -53,6 +53,8 @@ a {
 h1, h2, h3, h4 {
   font-weight: bold;
   padding: 2em 0 0.4em;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
 h1 {
   font-size: 3em;
@@ -86,12 +88,28 @@ p, span {
 strong {
   font-weight: bold;
 }
+.highlight {
+  padding: 16px;
+  font-family: monospace;
+  overflow: auto;
+}
 .highlight span {
-  font-size: 14px;
+  font-size: 16px;
+  line-height: 1;
+}
+figure {
+  margin-bottom: 65px;
 }
 img {
-  width: 100%;
+  // display: block;
+  max-width: 100%;
   margin: 10px auto;
+}
+figcaption {
+  // text-align: center;
+  font-style: italic;
+  font-size: 0.9em;
+  // margin-top: 1em;
 }
 
 // Grayscale filter
@@ -131,11 +149,6 @@ img {
   }
 }
 
-.highlight {
-  padding: 20px;
-  font-family: Menlo, Consolas, Monaco, monospace;
-  overflow: auto;
-}
 // Page ======================
 .page {
   margin-bottom: 80px;

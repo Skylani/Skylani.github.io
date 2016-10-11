@@ -7,8 +7,10 @@ var gulp = require('gulp'),
     child = require('child_process'),
     gutil = require('gulp-util'),
     concat = require('gulp-concat'),
+    imagemin = require('gulp-imagemin'),
 
     cssFiles = '_css/*.?(s)css',
+    imageFiles = '_images/**/*',
     siteRoot = '_site',
     htmlFiles = '_site/**/*.html';
 
@@ -50,6 +52,13 @@ gulp.task('styles', function() {
     .pipe(gulp.dest('assets'))
     .pipe(browserSync.stream());
 });
+
+// Images
+gulp.task('images', () =>
+    gulp.src(imageFiles)
+        .pipe(imagemin())
+        .pipe(gulp.dest('assets/images'))
+);
 
 // Watch for changes
 gulp.task('watch', function() {
