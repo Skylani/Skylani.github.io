@@ -14,9 +14,9 @@ var gulp = require('gulp'),
     siteRoot = '_site',
     htmlFiles = '_site/**/*.html';
 
-function errorlog(error) {
-    console.error.bind(error);
-    this.emit('end');
+function handleError(err) {
+  console.log(err.toString());
+  this.emit('end');
 }
 
 // Jekyll task
@@ -46,25 +46,16 @@ gulp.task('styles', function() {
     gulp.src(cssFiles)
     .pipe(sass({
         outputStyle: 'compressed'
-    })).on('error', errorlog)
+    })).on('error', handleError)
     .pipe(concat('all.css'))
     .pipe(postcss(processors))
     .pipe(gulp.dest('assets'))
     .pipe(browserSync.stream());
 });
 
-// Images
-gulp.task('images', () =>
-    gulp.src(imageFiles)
-        .pipe(imagemin())
-        .pipe(gulp.dest('assets/images'))
-);
-
 // Watch for changes
 gulp.task('watch', function() {
     browserSync.init({
-        files: [siteRoot + '/**'],
-        port: 4000,
         server: {
             baseDir: siteRoot
         }
