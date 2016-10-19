@@ -1,8 +1,10 @@
 @import 'reset';
 // General ======================
+$browser-context: 16; // Default
 $black: #333;
 $dark-grey: #555555;
 $grey: #999999;
+$light-grey: #B1B4B4;
 $section-title-size: 35px;
 
 
@@ -12,6 +14,11 @@ $color-link: #FFF;
 
 $button-height: 27px;
 $button-width: 35px;
+
+// px to rem function
+@function rem($pixels, $context: $browser-context) {
+  @return #{$pixels/$context}rem;
+}
 
 @mixin word-wrap() {
   overflow-wrap: break-word;
@@ -39,20 +46,14 @@ $button-width: 35px;
 html, body {
   height: 100%;
   width: 100%;
-  font-family: 'merriweather', 'Microsoft YaHei', 'Hiragino Sans GB', sans-serif;
+  font-family: 'Raleway', 'Microsoft YaHei', 'Hiragino Sans GB', sans-serif;
+  font-size: 19px;
   color: $black;
-}
-a {
-  text-decoration: none;
-  color: $grey;
-  transition: all .4s ease;
-  &:hover {
-    color: $black;
-  }
 }
 h1, h2, h3, h4 {
   font-weight: bold;
-  padding: 2em 0 0.4em;
+  padding: rem(25) 0 rem(10);
+  line-height: 1.2;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
@@ -81,9 +82,20 @@ h3 {
   }
 }
 p, span {
-  margin: 1.3em 0;
+  padding: rem(10) 0;
   font-size: 19px;
-  line-height: 2;
+  line-height: rem(30);
+}
+a {
+  text-decoration: none;
+  color: $grey;
+  transition: all .4s ease;
+  &:hover {
+    color: $black;
+  }
+  &.active {
+    color: $black;
+  }
 }
 strong {
   font-weight: bold;
@@ -94,44 +106,38 @@ strong {
   overflow: auto;
 }
 .highlight span {
+  padding: 0;
   font-size: 16px;
   line-height: 1;
 }
 figure {
-  margin-bottom: 65px;
+  padding: rem(15) 0;
 }
 img {
-  // display: block;
   max-width: 100%;
   margin: 10px auto;
 }
 figcaption {
-  // text-align: center;
+  color: $grey;
   font-style: italic;
   font-size: 0.9em;
-  // margin-top: 1em;
 }
 
 // Grayscale filter
 // Go from grayscale to full color on hover
-img:hover {
-  -webkit-filter: grayscale(0%);
-  -webkit-transition: .5s ease-in-out;
-  -moz-filter: grayscale(0%);
-  -moz-transition: .5s ease-in-out;
-  -o-filter: grayscale(0%);
-  -o-transition: .5s ease-in-out;
-}
 img {
-  -webkit-filter: grayscale(100%);
-  -webkit-transition: .5s ease-in-out;
-  -moz-filter: grayscale(100%);
-  -moz-transition: .5s ease-in-out;
-  -o-filter: grayscale(100%);
-  -o-transition: .5s ease-in-out;
+  filter: grayscale(100%);
+  transition: .5s ease-in-out;
+}
+img:hover {
+  filter: grayscale(0%);
 }
 
 .content {
+  h2, h3, h4 {
+    text-transform: uppercase;
+    letter-spacing: rem(1);
+  }
   ul, ol {
     margin: 10px auto 20px auto;
     list-style: initial;
@@ -149,56 +155,132 @@ img {
   }
 }
 
-// Page ======================
-.page {
-  margin-bottom: 80px;
+form {
+  max-width: 70%;
+  margin: rem(50) auto rem(100);
 }
-.page-title {
-  padding-top: 60px;
-}
-.post-url {
-  @include content-link;
-  font-size: 1.1em;
-  margin: 10px auto;
-  display: inline;
-  padding: 0;
-}
-small {
-  font-size: 0.8em;
-  font-weight: normal;
-}
-.post-list {
-  li:before {
-    content: "\00BB\0020";
-    color: $grey;
-  }
-  &:last-of-type {
-    margin-bottom: 80px;
+@media screen and (max-width: 468px) {
+  form {
+    max-width: 100%;
   }
 }
 
-// Home ======================
-nav,
-.container,
-footer {
-  margin: 0 auto;
-  max-width: 700px;
+input, textarea {
+  display: block;
+  width: 100%;
+  font-size: rem(14);
+  border: solid 1px $grey;
+  outline: none;
+  transition: all .4s ease-in-out;
+  background: transparent;
 }
+input {
+  height: 50px;
+  padding: 0px 15px;
+  border-bottom: none;
+}
+textarea {
+  // height: 110px;
+  // max-height: 110px;
+  padding: 15px;
+}
+input:focus, textarea:focus {
+  background: $black;
+  color: #e2dedb;
+}
+
+input[type=submit] {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  border: solid 1px $grey;
+  border-top: none;
+  color: $grey;
+  &:hover {
+    color: $dark-grey;
+  }
+}
+input::placeholder, textarea::placeholder {
+  color: $grey;
+  // color: #aca49c;
+  letter-spacing: 1px;
+  font-size: rem(12);
+  text-transform: uppercase;
+  transition: all .4s ease-in-out;
+}
+
+input:focus::placeholder, textarea::focus:placeholder {
+  color: #bbb5af;
+}
+
+
+/* on hover placeholder */
+input:hover:focus::placeholder, textarea:hover:focus::placeholder {
+  color: #cbc6c1;
+  // color: $black;
+}
+
+input:hover::placeholder, textarea:hover::placeholder {
+  color: $dark-grey;
+}
+
+
+// Header ====================
+header {
+  position: fixed;
+  z-index: 10;
+  float: left;
+  width: 100%;
+  text-align: left;
+  font-size: rem(13);
+}
+.nav {
+  padding: rem(20) 0 rem(20);
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 1px;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  border-bottom: 1px solid rgba(200,200,200,.3);
+  li {
+    display: inline-block;
+    padding: 0 rem(20);
+    &:first-child {
+      padding-left: 0;
+    }
+  }
+}
+
 header, header.headroom--bottom {
   position: fixed;
   z-index: 100;
   top: 0;
   left: 0;
   right: 0;
-  transition: top .4s ease;
+  transition: all .4s ease-in-out;
 }
-
+.headroom--top {
+  background: transparent;
+}
 .headroom--unpinned {
-  top: -50px;
+  top: rem(-70);
+}
+.headroom--not-top {
+  background: $black;
+  .nav {
+    border: none;
+  }
+
+  a {
+    &:hover, &.active {
+      color: #fff;
+    }
+  }
 }
 
 .button-container {
   position: absolute;
+  display: none;
   top: 20px;
   right: 20px;
   float: right;
@@ -229,6 +311,7 @@ header, header.headroom--bottom {
 
   span {
     margin: 0;
+    padding: 0;
     background: $black;
     border: none;
     height: 5px;
@@ -249,7 +332,17 @@ header, header.headroom--bottom {
   }
 }
 
-.overlay {
+@media screen and (max-width: 535px) {
+  .button-container {
+    display: block;
+  }
+  .nav-container {
+    display: none;
+  }
+
+}
+
+.isOverlay {
   position: fixed;
   background: $black;
   top: 0;
@@ -267,7 +360,7 @@ header, header.headroom--bottom {
     height: 100%;
 
     li {
-      animation: fadeInRight .5s ease forwards;
+      animation: fadeInRight .4s ease-in-out forwards;
       animation-delay: .35s;
 
       &:nth-of-type(2) {
@@ -291,6 +384,7 @@ header, header.headroom--bottom {
     text-align: center;
   }
   ul {
+    border: none;
     list-style: none;
     padding: 0;
     margin: 0 auto;
@@ -346,23 +440,49 @@ header, header.headroom--bottom {
   }
 }
 
-.links {
-  list-style: none;
-  font-weight: bold;
-  li {
-    display: inline;
-    padding-right: 15px;
+
+// Page ======================
+.page {
+  margin-bottom: 80px;
+}
+.page-title {
+  text-align: center;
+  padding-top: 7rem;
+}
+@media screen and (max-width: 468px) {
+  .page-title {
+    padding-top: 4rem;
   }
+}
+.post-url {
+  @include content-link;
+  font-size: 1.1em;
+  margin: 10px auto;
+  display: inline;
+  padding: 0;
+}
+small {
+  font-size: 0.8em;
+  font-weight: normal;
+}
+.post-list {
+  li:before {
+    content: "\00BB\0020";
+    color: $grey;
+  }
+  &:last-of-type {
+    margin-bottom: 80px;
+  }
+}
+
+// Home ======================
+.container {
+  margin: 0 auto;
+  max-width: 700px;
 }
 
 .container {
   min-height: 100%;
-  margin-bottom: -44px;
-
-  &:after {
-    content: "";
-    display: block;
-  }
 }
 
 .blurb {
@@ -374,22 +494,10 @@ header, header.headroom--bottom {
   }
 }
 
-footer, .container:after {
-  /* .push must be the same height as footer */
-    height: 44px;
-}
-
 .site-title {
   margin-bottom: 20px;
   margin-top: 0;
   padding: 0;
-}
-
-footer {
-  border-top: 1px solid #d5d5d5;
-}
-.links-foot {
-  padding: 10px 0;
 }
 
 // About ======================
@@ -399,6 +507,7 @@ footer {
   height: 150px;
   margin: 20px 30px 30px 40px;
 }
+
 
 // Projects ===================
 .projects {
@@ -463,6 +572,26 @@ footer {
 .resume-btn {
   width: 300px;
   margin-top: 40px;
+}
+
+
+// Contact ====================
+#contact {
+  text-align: center;
+  .email {
+    font-size: rem(30);
+  }
+}
+ul.links-social {
+  list-style: none;
+  padding: 0;
+  li {
+    display: inline-block;
+    padding-right: 15px;
+    &:last-child {
+      padding-right: 0;
+    }
+  }
 }
 
 // Blog =======================
@@ -553,7 +682,6 @@ footer {
 
 // Responsive ==================
 @media (max-width: 768px) {
-  nav,
   .container,
   footer {
     width: 85%;
