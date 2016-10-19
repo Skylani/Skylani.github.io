@@ -94,18 +94,18 @@ $reason_2_description       = get_field( 'reason_2_description' );
   </figure>
 
   <p>Here's how to print out all course features in a loop:</p>
-  {% highlight php %}
-  <?php $loop = new WP_Query( array( 'post_type'  => 'course_feature', 'orderby' => 'post-id', 'order' => 'ASC') ); ?>
+{% highlight php %}
+<?php $loop = new WP_Query( array( 'post_type'  => 'course_feature', 'orderby' => 'post-id', 'order' => 'ASC') ); ?>
 
-  <?php while( $loop->have_posts() ) : $loop->the_post(); ?>
+<?php while( $loop->have_posts() ) : $loop->the_post(); ?>
 
-    <div class="col-sm-2">
-      <i class="<?php the_field('course_feature_icon'); ?>"></i>
-      <h4><?php the_title(); ?></h4>
-    </div><!-- col -->
+  <div class="col-sm-2">
+    <i class="<?php the_field('course_feature_icon'); ?>"></i>
+    <h4><?php the_title(); ?></h4>
+  </div><!-- col -->
 
-  <?php endwhile; wp_reset_query(); ?>
-  {% endhighlight %}
+<?php endwhile; wp_reset_query(); ?>
+{% endhighlight %}
 
 
   <figure>

@@ -9,7 +9,7 @@ var gulp = require('gulp'),
     concat = require('gulp-concat'),
     imagemin = require('gulp-imagemin'),
 
-    cssFiles = '_css/*.?(s)css',
+    cssFiles = '_css/all.scss',
     imageFiles = '_images/**/*',
     siteRoot = '_site',
     htmlFiles = '_site/**/*.html';
