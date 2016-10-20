@@ -1,35 +1,48 @@
 <!DOCTYPE html>
-    <html lang="en">
-        <head>
-            <title>The Odin Project</title>
-            <meta name="viewport" content="width=device-width, initial-scale=1">
-            <link rel="stylesheet" type="text/css" href="/assets/all.css">
-            <link href='https://fonts.googleapis.com/css?family=Merriweather:400,700' rel='stylesheet' type='text/css'>
+<html lang="en">
+<head>
+  <title>The Odin Project</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="/assets/all.css">
+<body>
+  <header id="header">
+    <div class="container">
+      <div id="overlay" class="nav-container">
+        <nav>
+          
+<ul class="nav">
+  
+  
+  <li>
+    <a  href="/" title="Home">Home</a>
+  </li>
+  
+  <li>
+    <a  href="/about/" title="About">About</a>
+  </li>
+  
+  <li>
+    <a  href="/projects/" title="Projects">Projects</a>
+  </li>
+  
+  <li>
+    <a  href="/contact/" title="Contact">Contact</a>
+  </li>
+  
+</ul>
+        </nav>
+      </div>
+    </div>
+    <div id="toggle" class="button-container">
+      <span class="top"></span>
+      <span class="middle"></span>
+      <span class="bottom"></span>
+    </div>
+  </header>
 
-        </head>
-        <body>
-            <header id="header">
-                <div id="overlay" class="overlay">
-                    <nav class="overlay-menu">
-                        <ul>
-                            <li><a href="/">Home</a></li>
-                            <li><a href="/about">About</a></li>
-                            <li><a href="/projects">Projects</a></li>
-                            <li><a href="/blog">Blog</a></li>
-                        </ul>
-                    </nav>
-                </div>
+  <div id="top"></div>
 
-                <div id="toggle" class="button-container">
-                    <span class="top"></span>
-                    <span class="middle"></span>
-                    <span class="bottom"></span>
-                </div>
-            </header>
-
-            <div class="container">
-
-            <div class="content page">
+  <div class="container"><div class="content page">
   <h1 class="page-title">
     The Odin Project
   </h1>
@@ -42,7 +55,7 @@
 
   <section class="small-project">
     <div class="project-header">
-      <h2>Grid Framework</h2>
+      <h3>Grid Framework</h3>
       <p class="project-description">Clone of Airbnb website with a simple 12-column grid framework.</p>
     </div>
     <img class="screenshot" src="../../assets/images/page/airbnb-LapTop-ipad-phone.png" alt="">
@@ -55,7 +68,7 @@
 
   <section class="small-project">
     <div class="project-header">
-      <h2>Responsive Design</h2>
+      <h3>Responsive Design</h3>
       <p class="project-description">Clone of The Next Web website</p>
     </div>
     <img class="screenshot" src="../../assets/images/page/tnw-LapTop-ipad-phone.png" alt="">
@@ -69,7 +82,7 @@
 
   <section class="small-project">
     <div class="project-header">
-      <h2>Snake</h2>
+      <h3>Snake</h3>
       <p class="project-description">A classic game built with Javascript and jQuery.</p>
     </div>
     <img class="screenshot" src="../../assets/images/page/snake-game.png" alt="">
@@ -81,7 +94,7 @@
 
   <section class="small-project">
     <div class="project-header">
-      <h2>Sketchpad</h2>
+      <h3>Sketchpad</h3>
       <p class="project-description">A simple sketchpad built with Javascript and jQuery.</p>
     </div>
     <img class="screenshot" src="../../assets/images/page/sketchpad-MiniLapTop.png" height="579" width="911" alt="">
@@ -93,7 +106,7 @@
 
   <section class="small-project">
     <div class="project-header">
-      <h2>Calculator</h2>
+      <h3>Calculator</h3>
       <p class="project-description">A calculator built with Javascript and jQuery.</p>
     </div>
     <img class="screenshot" src="../../assets/images/page/js-calculator.png" height="499" width="398" alt="">
@@ -103,26 +116,22 @@
     </div>
   </section>
 
-  <h2>Note-taking app I use for studying web development</h2>
+  <h3>Note-taking app I use for studying web development</h3>
   <p>When working on the project, I used Evernote to take note but found it not suitable for studying a particular topic because of its notebook structure. Then, I changed my note-taking app to OneNote mainly because that it can better organize notes into sections and pages. Although these two are great note-taking apps, I was not satisfied. I also wanted Markdown support.</p>
 
   <p>In the meantime, I came across an idea that learn by writing a book. Therefore, when I started working on the HTML5 and CSS3 section of the curriculum, I used GitBook as a note-taking app. This way, I can better organize my newly found knowledge. Better yet, it supports Markdown.</p>
 
   <p>The "book" I wrote: <a href="//notebook.lanihuang.com" target="_blank">Learning Web Development</a></p>
 
-</div>
+</div></div>
+  <!-- .container -->
 
-            </div><!-- /.container -->
-            <footer>
-                <ul class="links links-foot">
-                    <li><a href="mailto:laniywh@gmail.com">Email</a></li>
-                    <li><a href="https://github.com/laniywh" target="_blank">Github</a></li>
-                    <li><a href="https://twitter.com/laniywh" target="_blank">Twitter</a></li>
-                    <li><a href="http://codepen.io/laniywh/" target="_blank">CodePen</a></li>
-                </ul>
-            </footer>
+  <a class="back-to-top" href="#top">
+  <span class="left"></span>
+  <span class="right"></span>
+</a>
 
-            <!-- Google Analytics -->
+  <!-- Google Analytics -->
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -134,10 +143,9 @@
 
 </script>
 <!-- End Google Analytics -->
-
-            <script src="//ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-            <script src="//cdnjs.cloudflare.com/ajax/libs/headroom/0.9.3/headroom.min.js"></script>
-            <script src="//cdnjs.cloudflare.com/ajax/libs/headroom/0.9.3/jQuery.headroom.min.js"></script>
-            <script src="/assets/js/script.js"></script>
-        </body>
-    </html>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/headroom/0.9.3/headroom.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/headroom/0.9.3/jQuery.headroom.min.js"></script>
+  <script src="/assets/js/script.js"></script>
+</body>
+</html>
