@@ -61,7 +61,7 @@ h1 {
 }
 @media (max-width: 468px) {
   h1 {
-    font-size: 32px;
+    font-size: 38px;
   }
 }
 h2 {
@@ -108,6 +108,13 @@ strong {
     font-size: 16px;
     line-height: 1;
     padding: 0;
+  }
+}
+@media screen and (max-width: 468px) {
+  .content .highlight {
+    span {
+      font-size: 14px;
+    }
   }
 }
 figure {
@@ -480,6 +487,7 @@ header, header.headroom--bottom {
 .page-title {
   text-align: center;
   padding-top: 7rem;
+  padding-bottom: rem(30);
 }
 @media screen and (max-width: 468px) {
   .page-title {
@@ -565,6 +573,11 @@ small {
   padding: 0;
   font-weight: normal;
   font-size: 40px;
+}
+@media screen and (max-width: 468px) {
+  .project-title {
+    font-size: 36px;
+  }
 }
 
 .small-project {
