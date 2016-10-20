@@ -9,7 +9,7 @@ var gulp = require('gulp'),
     concat = require('gulp-concat'),
     imagemin = require('gulp-imagemin'),
 
-    cssFiles = '_css/all.scss',
+    cssFiles = '_css/*.?(s)css',
     imageFiles = '_images/**/*',
     siteRoot = '_site',
     htmlFiles = '_site/**/*.html';
@@ -43,7 +43,7 @@ gulp.task('styles', function() {
       autoprefixer({browsers:['last 2 version']})
     ];
 
-    gulp.src(cssFiles)
+    gulp.src('_css/all.scss')
     .pipe(sass({
         outputStyle: 'compressed'
     })).on('error', handleError)

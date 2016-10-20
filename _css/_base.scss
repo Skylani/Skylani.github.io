@@ -542,7 +542,8 @@ small {
 
 
 // Projects ===================
-.projects {
+#projects {
+  text-align: center;
   ul {
     @include content-link;
     @include word-wrap;
@@ -738,7 +739,7 @@ ul.links-social {
   }
 
   // projects
-  .projects{
+  #projects{
     ul {
       margin-top: 20px;
       margin-bottom: 20px;
