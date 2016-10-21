@@ -53,6 +53,13 @@ gulp.task('styles', function() {
     .pipe(browserSync.stream());
 });
 
+// Minify Images
+gulp.task('images', function() {
+    gulp.src(imageFiles)
+        .pipe(imagemin())
+        .pipe(gulp.dest('assets/images'))
+});
+
 // Watch for changes
 gulp.task('watch', function() {
     browserSync.init({
