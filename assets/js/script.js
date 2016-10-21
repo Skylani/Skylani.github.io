@@ -12,7 +12,7 @@ $(document).ready(function(){
   });
 
   $(window).resize(function(){
-    if($(window).width() > 535) {
+    if($(window).width() >= 550) {
       // Remove overlay style
       $('#overlay').removeClass('isOverlay');
       // Show nav
@@ -23,7 +23,7 @@ $(document).ready(function(){
       $('#overlay').removeClass('open');
     }
 
-    if($(window).width() < 535) {
+    if($(window).width() < 550) {
       // Apply overlay style
       $('#overlay').addClass('isOverlay');
     }

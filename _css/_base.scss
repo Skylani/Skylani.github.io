@@ -4,7 +4,6 @@ $black: #333;
 $dark-grey: #555555;
 $grey: #999999;
 $light-grey: #B1B4B4;
-$section-title-size: 35px;
 $color-background: #F5F5F5;
 $color-active: #FFF;
 $color-link: #FFF;
@@ -20,11 +19,7 @@ $button-width: 35px;
 @mixin word-wrap() {
   overflow-wrap: break-word;
   word-wrap: break-word;
-  -ms-word-break: break-all;
   word-break: break-word;
-  -ms-hyphens: auto;
-  -moz-hyphens: auto;
-  -webkit-hyphens: auto;
   hyphens: auto;
 }
 
@@ -47,6 +42,13 @@ html, body {
   font-size: 19px;
   color: $black;
 }
+
+.container {
+  margin: 0 auto;
+  max-width: 700px;
+  height: 100%;
+}
+
 h1, h2, h3, h4 {
   font-weight: bold;
   padding: rem(25) 0 rem(10);
@@ -55,33 +57,17 @@ h1, h2, h3, h4 {
   text-rendering: optimizeLegibility;
 }
 h1 {
-  font-size: 3em;
-}
-@media (max-width: 468px) {
-  h1 {
-    font-size: 38px;
-  }
+  font-size: 3rem;
 }
 h2 {
-  font-size: 32px;
-}
-@media (max-width: 468px) {
-  h2 {
-    font-size: 25px;
-  }
+  font-size: rem(32);
 }
 h3 {
-  font-size: 25px;
+  font-size: rem(25);
 }
-@media (max-width: 468px) {
-  h3 {
-    font-size: 18px;
-  }
-}
-p, span {
+p {
   padding: rem(10) 0;
-  font-size: 1rem;
-  line-height: rem(30);
+  line-height: 2rem;
 }
 a {
   text-decoration: none;
@@ -98,22 +84,10 @@ strong {
   font-weight: bold;
 }
 .highlight {
-  padding: 16px;
+  padding: rem(16);
   font-family: monospace;
   overflow: auto;
-  line-height: 1;
-  span {
-    font-size: 16px;
-    line-height: 1;
-    padding: 0;
-  }
-}
-@media screen and (max-width: 468px) {
-  .content .highlight {
-    span {
-      font-size: 14px;
-    }
-  }
+  font-size: rem(16);
 }
 figure {
   padding: rem(15) 0;
@@ -125,49 +99,36 @@ img {
 figcaption {
   color: $grey;
   font-style: italic;
-  font-size: 0.9em;
+  font-size: 0.9rem;
 }
 
-// Grayscale filter
-// Go from grayscale to full color on hover
-img {
-  filter: grayscale(100%);
-  transition: .5s ease-in-out;
-}
-img:hover {
-  filter: grayscale(0%);
+@media screen and (min-width: 768px) {
+  // Grayscale filter
+  // Go from grayscale to full color on hover
+  img {
+    filter: grayscale(100%);
+    transition: .4s ease-in-out;
+  }
+  img:hover {
+    filter: grayscale(0%);
+  }
 }
 
 .content {
-  h2, h3, h4 {
+  h1, h2, h3, h4 {
     text-transform: uppercase;
-    letter-spacing: rem(1);
+    letter-spacing: rem(4);
+  }
+  h1 {
+    letter-spacing: rem(6);
   }
   ul, ol {
     margin: 10px auto 20px auto;
     list-style: initial;
     padding-left: 30px;
-    font-size: 1rem;
-    line-height: 1.7;
+    line-height: 2;
   }
   @include content-link;
-}
-@media (max-width: 468px) {
-  .content {
-    ul, ol {
-      font-size: 16px;
-    }
-  }
-}
-
-form {
-  max-width: 70%;
-  margin: rem(50) auto rem(100);
-}
-@media screen and (max-width: 468px) {
-  form {
-    max-width: 100%;
-  }
 }
 
 input, textarea {
@@ -240,9 +201,9 @@ input:hover::placeholder, textarea:hover::placeholder {
 .back-to-top {
   display: none;
   position: fixed;
-  right: rem(20); bottom: rem(20);
-  width: rem(50);
-  height: rem(50);
+  right: 20px; bottom: 20px;
+  width: 50px;
+  height: 50px;
   &:hover {
     opacity: .7;
   }
@@ -250,7 +211,7 @@ input:hover::placeholder, textarea:hover::placeholder {
     display: block;
     position: absolute;
     height: 4px;
-    width: rem(27);
+    width: 27px;
     padding: 0;
     background: $black;
   }
@@ -263,7 +224,6 @@ input:hover::placeholder, textarea:hover::placeholder {
 }
 
 
-
 // Header ====================
 header {
   position: fixed;
@@ -271,14 +231,14 @@ header {
   float: left;
   width: 100%;
   text-align: left;
-  font-size: rem(15);
 }
 .nav {
+  font-size: rem(15);
   text-align: center;
   padding: rem(20) 0 rem(20);
   text-transform: uppercase;
   font-weight: 700;
-  letter-spacing: 1px;
+  letter-spacing: 2px;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
   border-bottom: 1px solid rgba(200,200,200,.3);
@@ -369,14 +329,13 @@ header, header.headroom--bottom {
   }
 }
 
-@media screen and (max-width: 535px) {
+@media screen and (max-width: 550px) {
   .button-container {
     display: block;
   }
   .nav-container {
     display: none;
   }
-
 }
 
 .isOverlay {
@@ -416,9 +375,11 @@ header, header.headroom--bottom {
     height: 70%;
     top: 50%;
     transform: translateY(-50%);
-    font-size: 50px;
-    font-weight: 400;
     text-align: center;
+    .nav {
+      font-size: 30px;
+      letter-spacing: 15px;
+    }
   }
   ul {
     border: none;
@@ -436,19 +397,13 @@ header, header.headroom--bottom {
       min-height: 50px;
       position: relative;
       opacity: 0;
+      margin-right: -15px;
 
       a {
         display: block;
         position: relative;
-        color: $color-link;
-        text-decoration: none;
+        color: #fff;
         overflow: hidden;
-
-        &:hover:after,
-         &:focus:after,
-         &:active:after {
-           width: 100%;
-         }
 
         &:after {
           content: '';
@@ -458,7 +413,7 @@ header, header.headroom--bottom {
           width: 0%;
           transform: translateX(-50%);
           height: 3px;
-          background: $color-link;
+          background: #fff;
           transition: .35s;
         }
       }
@@ -480,27 +435,23 @@ header, header.headroom--bottom {
 
 // Page ======================
 .page {
-  padding-bottom: 80px;
+  padding-bottom: rem(80);
+  padding-top: 5.5rem;
 }
 .page-title {
+  @include word-wrap;
   text-align: center;
-  padding-top: 7rem;
   padding-bottom: rem(30);
-}
-@media screen and (max-width: 468px) {
-  .page-title {
-    padding-top: 4rem;
-  }
 }
 .post-url {
   @include content-link;
-  font-size: 1.1em;
+  font-size: 1.1rem;
   margin: 10px auto;
   display: inline;
   padding: 0;
 }
 small {
-  font-size: 0.8em;
+  font-size: 0.8rem;
   font-weight: normal;
 }
 .post-list {
@@ -514,25 +465,25 @@ small {
 }
 
 // Home ======================
-.container {
-  margin: 0 auto;
-  max-width: 700px;
-  height: 100%;
-}
 
 .blurb {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  a {
-    font-size: 100%;
-  }
 }
-
 .site-title {
-  margin-bottom: 20px;
+  font-size: 3rem;
+  letter-spacing: rem(14);
+  margin-bottom: rem(20);
   margin-top: 0;
   padding: 0;
+  font-weight: bold;
+}
+span.line {
+  display: inline-block;
+}
+.site-description {
+  letter-spacing: rem(6);
 }
 
 // About ======================
@@ -567,12 +518,7 @@ small {
 .project-title {
   padding: 0;
   font-weight: normal;
-  font-size: 40px;
-}
-@media screen and (max-width: 468px) {
-  .project-title {
-    font-size: 36px;
-  }
+  font-size: rem(40);
 }
 
 .small-project {
@@ -629,13 +575,23 @@ ul.links-social {
   }
 }
 
+form {
+  max-width: 70%;
+  margin: rem(50) auto 0;
+}
+@media screen and (max-width: 468px) {
+  form {
+    max-width: 100%;
+  }
+}
+
 // Blog =======================
 .post {
   margin-bottom: 80px;
 }
 .post-title {
   margin-bottom: 10px;
-  font-size: 35px;
+  font-size: rem(42);
   @include content-link;
 }
 .meta {
@@ -669,7 +625,7 @@ ul.links-social {
   margin-bottom: 80px;
 }
 .older, .newer{
-  font-size: 20px;
+  font-size: rem(20);
 }
 .older {
   margin-left: 20px;
@@ -730,24 +686,18 @@ ul.links-social {
 
 // Responsive ==================
 @media (max-width: 768px) {
-  .container,
-  footer {
+  .container {
     width: 85%;
   }
 }
 
 @media (max-width: 468px) {
-  .content {
-    p, span, a {
-      font-size: 16px;
-    }
+  html, body {
+    font-size: 16px;
   }
 
-  .site-title {
-    font-size: 2em;
-    a {
-      font-size: 1em;
-    }
+  .page-title {
+    font-size: 2rem;
   }
 
   .btn {
@@ -765,26 +715,6 @@ ul.links-social {
       margin-top: 20px;
       margin-bottom: 20px;
     }
-  }
-  .project-title {
-    a {
-      font-size: 30px!important;
-    }
-  }
-
-
-  // blog
-  .post {
-    font-size: 1em;
-  }
-  .post-title {
-    font-size: 32px;
-  }
-  .date, .meta {
-    font-size: 14px;
-  }
-  .tags span {
-    font-size: 16px;
   }
 
   // about
