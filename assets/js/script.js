@@ -54,4 +54,7 @@ $(document).ready(function(){
     }
   });
 
+  //allow :active styles to work in Mobile Safari
+  document.addEventListener("touchstart", function(){}, true);
+
 });
