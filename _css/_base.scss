@@ -41,6 +41,7 @@ html, body {
   font-family: 'Raleway', 'Microsoft YaHei', 'Hiragino Sans GB', sans-serif;
   font-size: 19px;
   color: $black;
+  tap-highlight-color: rgba(0,0,0,0);
 }
 
 .container {
@@ -220,6 +221,11 @@ input:hover::placeholder, textarea:hover::placeholder {
   }
   .right {
     transform: translateY(20px) translateX(0) rotate(-45deg);
+  }
+}
+@media screen and (max-width: 468px) {
+  .back-to-top {
+    right: 8px; bottom: 10px;
   }
 }
 
