@@ -41,7 +41,7 @@ html, body {
   font-family: 'Raleway', 'Microsoft YaHei', 'Hiragino Sans GB', sans-serif;
   font-size: 19px;
   color: $black;
-  tap-highlight-color: rgba(0,0,0,0);
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
 }
 
 .container {
