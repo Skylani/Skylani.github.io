@@ -8,7 +8,10 @@
 <body>
   <header id="header">
     <div class="container">
-      <div id="overlay" class="nav-container">
+      <nav class="desktop-nav">
+        {% include nav.html %}
+      </nav>
+      <div id="overlay" class="overlay">
         <nav>
           {% include nav.html %}
         </nav>

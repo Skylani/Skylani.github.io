@@ -341,12 +341,12 @@ header, header.headroom--bottom {
   .button-container {
     display: block;
   }
-  .nav-container {
+  .desktop-nav {
     display: none;
   }
 }
 
-.isOverlay {
+.overlay {
   position: fixed;
   background: $black;
   top: 0;
