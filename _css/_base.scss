@@ -140,6 +140,8 @@ input, textarea {
   outline: none;
   transition: all .4s ease-in-out;
   background: transparent;
+  -webkit-appearance: none;
+  border-radius: 0;
 }
 input {
   height: 50px;
