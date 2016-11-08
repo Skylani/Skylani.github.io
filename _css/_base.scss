@@ -153,10 +153,6 @@ input {
 textarea {
   padding: 15px;
 }
-input:focus, textarea:focus {
-  background: $black;
-  color: #e2dedb;
-}
 
 input[type=submit] {
   text-transform: uppercase;
@@ -168,6 +164,13 @@ input[type=submit] {
   &:hover {
     color: $dark-grey;
   }
+  &:focus {
+    color: #e2dedb;
+  }
+}
+input:focus, textarea:focus {
+  background: $black;
+  color: #fff;
 }
 input::placeholder, textarea::placeholder {
   color: $grey;
