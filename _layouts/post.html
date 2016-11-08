@@ -1,0 +1,35 @@
+---
+layout: default
+comments: true
+---
+<div class="page">
+  <article class="post">
+    <h1 class="post-title">{{ page.title }}</h1>
+    <div class="meta">
+      <span class="date">{{ page.date | date_to_string }}</span>
+      {% for ct in page.categories %}
+        <a class="meta-cat" href="/blog/categories/#{{ ct | slugify }}">{{ ct }}</a>
+      {% endfor %}
+    </div>
+    <div class="content">
+      {{ page.content }}
+    </div>
+    {% if page.tags.size > 0 %}
+      <div class="tags">
+        <span>Tags:</span>
+        {% for tag in page.tags %}
+          <a class="tag" href="/blog/tags/#{{ tag | slugify }}">{{ tag }}</a>
+        {% endfor %}
+      </div>
+    {% endif %}
+  </article>
+
+  <div class="posts-nav">
+    {% if page.next %}
+      <a href="{{ page.next.url }}" class="next">&laquo; {{ page.next.title }}</a>
+    {% endif %}
+    {% if page.previous %}
+      <a href="{{ page.previous.url }}" class="prev">{{ page.previous.title }} &raquo;</a>
+    {% endif %}
+  </div>
+</div>
