@@ -1,0 +1,93 @@
+social:
+  - {name: Email,
+    link: 'mailto:laniywh@gmail.com'}
+  - {name: GitHub,
+    link: 'https://github.com/laniywh'}
+  - {name: Twitter,
+    link: 'https://twitter.com/laniywh'}
+  - {name: CodePen,
+    link: 'http://codepen.io/laniywh/'}
+
+
+projects:
+  - {name: lanihuang.com,
+     folder: lani-huang,
+     thumb-extension: .jpg,
+     width: 3,
+     tags: [htmlcss, jekyll, javascript]}
+  # - {name: A Landing Page Clone,
+  #    folder: landing-page-clone,
+  #    thumb-extension: .jpg,
+  #    width: 5,
+  #    tags: [bootstrap, htmlcss, javascript]}
+  - {name: Snake Game,
+     folder: snake,
+     thumb-extension: .jpg,
+     width: 3,
+     tags: [javascript, top]}
+  - {name: Bootstrap to WordPress,
+     folder: b2w,
+     thumb-extension: .jpg,
+     width: 4,
+     tags: [wordpress, htmlcss, php, bootstrap]}
+  - {name: Golden Age Village,
+     folder: golden-age-village,
+     thumb-extension: .jpg,
+     width: 3,
+     tags: [wordpress, htmlcss]}
+  - {name: Calculator,
+     folder: calculator,
+     thumb-extension: .jpg,
+     width: 2,
+     tags: [javascript, top]}
+  - {name: Tic Tac Toe,
+     folder: tic-tac-toe,
+     thumb-extension: .jpg,
+     width: 4,
+     tags: [javascript]}
+  - {name: Mastermind,
+     folder: mastermind,
+     thumb-extension: .jpg,
+     width: 4,
+     tags: [ruby, top]}
+  - {name: Franklin's Fine Dining,
+     folder: franklins-fine-dining,
+     thumb-extension: .jpg,
+     width: 3,
+     tags: [php]}
+  - {name: Sketchpad,
+     folder: sketchpad,
+     thumb-extension: .jpg,
+     width: 2,
+     tags: [javascript, top]}
+  - {name: The Next Web Clone,
+     folder: tnw-clone,
+     thumb-extension: .jpg,
+     width: 4,
+     tags: [htmlcss, top]}
+  - {name: Hangman,
+     folder: hangman,
+     thumb-extension: .gif,
+     width: 3,
+     tags: [ruby, top]}
+
+
+project-tags:
+  - {name: All,
+     class: all}
+  - {name: The Odin Project,
+     class: top}
+  - {name: Javascript,
+     class: javascript}
+  - {name: HTML/CSS,
+     class: htmlcss}
+  - {name: Jekyll,
+     class: jekyll}
+  - {name: Bootstrap,
+     class: bootstrap}
+  - {name: Ruby,
+     class: ruby}
+  - {name: WordPress,
+     class: wordpress}
+  - {name: PHP,
+     class: php}

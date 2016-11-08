@@ -3,7 +3,9 @@ $browser-context: 19; // Default
 $black: #333;
 $dark-grey: #555555;
 $grey: #999999;
-$light-grey: #B1B4B4;
+// $light-grey: #B1B4B4;
+// $light-grey: #BFBFBF;
+$light-grey: #ECECEC;
 $color-background: #F5F5F5;
 $color-active: #FFF;
 $color-link: #FFF;
@@ -107,15 +109,15 @@ figcaption {
   // Grayscale filter
   // Go from grayscale to full color on hover
   img {
-    filter: grayscale(100%);
-    transition: .4s ease-in-out;
+    // filter: grayscale(100%);
+    // transition: .4s ease-in-out;
   }
   img:hover {
-    filter: grayscale(0%);
+    // filter: grayscale(0%);
   }
 }
 
-.content {
+article {
   h1, h2, h3, h4 {
     text-transform: uppercase;
     letter-spacing: rem(4);
@@ -187,11 +189,7 @@ input:hover::placeholder, textarea:hover::placeholder {
   color: $dark-grey;
 }
 
-.multiple-btns{
-  margin: 15px;
-}
-
-.content .btn {
+article .btn {
   width: 200px;
 }
 
@@ -200,6 +198,42 @@ input:hover::placeholder, textarea:hover::placeholder {
   margin-top: 40px;
 }
 
+.btns-container {
+  .btn {
+    margin: 15px 15px 15px 0;
+  }
+}
+
+.btn {
+  font-size: rem(14);
+  text-align: center;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  display: inline-block;
+  padding: 8px 20px;
+  min-width: 120px;
+  transition: all .3s ease;
+}
+  .btn.btn-default {
+    color: $black;
+    border: 1px solid $black;
+    &:hover {
+      background: $black;
+      color: #fff;
+    }
+  }
+  .btn.btn-inverse {
+    color: #fff;
+    border: 1px solid #fff;
+    &:hover {
+      color: #fff;
+      background: $grey;
+      border-color: $grey;
+    }
+  }
 
 .back-to-top {
   display: none;
@@ -231,6 +265,11 @@ input:hover::placeholder, textarea:hover::placeholder {
   }
 }
 
+.clearfix:after {
+  content: '';
+  display: block;
+  clear: both;
+}
 
 // Header ====================
 header {
@@ -444,10 +483,12 @@ header, header.headroom--bottom {
 // Page ======================
 .page {
   padding-bottom: rem(80);
-  padding-top: 5.5rem;
+  padding-top: 4.5rem;
 }
 .page-title {
   @include word-wrap;
+  letter-spacing: rem(6);
+  text-transform: uppercase;
   text-align: center;
   padding-bottom: rem(30);
 }
@@ -459,7 +500,8 @@ header, header.headroom--bottom {
   padding: 0;
 }
 small {
-  font-size: 0.8rem;
+  color: $grey;
+  font-size: 0.6rem;
   font-weight: normal;
 }
 .post-list {
@@ -503,66 +545,6 @@ span.line {
 }
 
 
-// Projects ===================
-#projects {
-  text-align: center;
-  ul {
-    @include content-link;
-    @include word-wrap;
-    margin: 50px 0 10px;
-    list-style: none;
-    padding: 0;
-
-    li {
-      margin-bottom: 30px;
-    }
-
-    p {
-      color: $dark-grey;
-      margin: 0;
-    }
-  }
-}
-.project-title {
-  padding: 0;
-  font-weight: normal;
-  font-size: rem(40);
-}
-
-.small-project {
-  margin-bottom: 130px;
-  margin-top: 40px;
-
-}
-
-.project-header {
-  text-align: center;
-}
-.project-description {
-  color: $grey;
-}
-.screenshot {
-  width: 100%;
-  height: auto;
-}
-
-.btn-container {
-  text-align: center;
-  margin-bottom: 60px;
-  margin-top: 20px;
-}
-
-.btn {
-  display: inline-block;
-  font-size: rem(19);
-  padding: 13px 0;
-  border: 1px solid $black;
-  &:hover {
-    background: $black;
-    color: #fff;
-  }
-}
-
 
 // Contact ====================
 #contact {
@@ -584,7 +566,7 @@ ul.links-social {
 }
 
 form {
-  max-width: 70%;
+  max-width: 500px;
   margin: rem(50) auto 0;
 }
 @media screen and (max-width: 468px) {
@@ -711,18 +693,7 @@ form {
   .btn {
     width: 100%;
     padding: 10px 0;
-  }
-  .multiple-btns{
-    margin-left: 0;
-    margin-right: 0;
-  }
-
-  // projects
-  #projects{
-    ul {
-      margin-top: 20px;
-      margin-bottom: 20px;
-    }
+    text-align: center;
   }
 
   // about

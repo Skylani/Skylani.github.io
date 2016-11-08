@@ -8,22 +8,33 @@ title: Projects
     {{ page.title }}
   </h1>
 
-  <ul class="project-list">
-    <li>
-      <h1 class="project-title"><a href="./lani-huang"">lanihuang.com</a></h1>
-      <p>My personal website, the one you're looking at.</p>
-    </li>
-    <li>
-      <h1 class="project-title"><a href="./b2w"">Bootstrap to WordPress</a></h1>
-      <p>A WordPress Theme made from scratch.</p>
-    </li>
-    <li>
-      <h1 class="project-title"><a href="./the-odin-project"">The Odin Project</a></h1>
-      <p>A group of projects bulit for learning web development.</p>
-    </li>
-    <li>
-      <h1 class="project-title"><a href="./golden-age-village"">goldenagevillage.net</a></h1>
-      <p>A WordPress website made for a senior apartment community.</p>
-    </li>
-  </ul>
+    <ul class="header-tags">
+      {% for tag in site.data.settings.project-tags %}
+      <li class="project-tag project-tag-default project-tag-{{ tag.class }}">{{ tag.name }}</li>
+      {% endfor %}
+    </ul>
+
+  <div class="thumb-container">
+    <div class="grid">
+      {% for project in site.data.settings.projects %}
+      {% assign tags = project.tags | join: ' ' %}
+      <div class="grid-item width{{ project.width }} {{ tags }}" data-folder="{{ project.folder }}" data-title="{{ project.name }}">
+        <div class="project-container">
+          <img class="project-thumb" src="../../assets/images/projects/{{ project.folder }}/thumb{{ project.thumb-extension }}" alt="{{ project.name }}">
+          <div class="project-hidable project-text">
+            <div class="project-title"></div>
+            <div class="project-content"></div>
+              <ul class="tag-list">
+                Tags:
+                {% for tag in project.tags %}
+                <li class="project-tag project-tag-inverse project-tag-{{ tag }}">{{ tag }}</li>
+                {% endfor %}
+              </ul>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+
 </div>

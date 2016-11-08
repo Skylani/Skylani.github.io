@@ -3,26 +3,19 @@ layout: default
 title: Contact
 ---
 
-<div class="page content" id="contact">
-  <h1 class="page-title">
-    {{ page.title }}
-  </h1>
+<div class="page" id="contact">
+  <div class="container">
+    <h1 class="page-title">{{ page.title }}</h1>
 
-  <ul class="links-social">
-    <li>
-      <a href="mailto:laniywh@gmail.com">Email</a>
-    </li>
-    <li>
-      <a href="https://github.com/laniywh" target="_blank">Github</a>
-    </li>
-    <li>
-      <a href="https://twitter.com/laniywh" target="_blank">Twitter</a>
-    </li>
-    <li>
-      <a href="http://codepen.io/laniywh/" target="_blank">CodePen</a>
-    </li>
-  </ul>
+    <ul class="links-social">
+      {% for account in site.data.settings.social %}
+      <li>
+        <a href="{{ account.link }}" target="_blank">{{ account.name }}</a>
+      </li>
+      {% endfor %}
+    </ul>
 
-  {% include contact-form.html %}
+    {% include contact-form.html %}
 
+  </div>
 </div>
