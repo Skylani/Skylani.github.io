@@ -1,9 +1,0 @@
-
-<ul class="nav">
-  {% assign url = page.url|remove:'index.html' %}
-  {% for link in site.navigation %}
-  <li>
-    <a {% if url == link.url %}class="active"{% endif %} href="{{ link.url }}" title="{{ link.title }}">{{ link.title }}</a>
-  </li>
-  {% endfor %}
-</ul>

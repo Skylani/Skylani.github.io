@@ -1,2 +1,7 @@
 _site/
 .jekyll-metadata
+.ruby-gemset
+.ruby-version
+.rvmrc
+node_modules/
+package.json
