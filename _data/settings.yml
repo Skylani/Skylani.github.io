@@ -15,11 +15,11 @@ projects:
      thumb-extension: .jpg,
      width: 3,
      tags: [htmlcss, jekyll, javascript]}
-  # - {name: A Landing Page Clone,
-  #    folder: landing-page-clone,
-  #    thumb-extension: .jpg,
-  #    width: 5,
-  #    tags: [bootstrap, htmlcss, javascript]}
+  - {name: Minesweeper,
+     folder: minesweeper,
+     thumb-extension: .jpg,
+     width: 3,
+     tags: [htmlcss, javascript]}
   - {name: Snake Game,
      folder: snake,
      thumb-extension: .jpg,
