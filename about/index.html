@@ -22,16 +22,11 @@ top-btn: true
     <h3>Online Education</h3>
     <div class="course-list">
       <ul>
-        <li><a href="//www.udemy.com/certificate/UC-L9WGVDZB/" target="_blank">WordPress Theme Development with Bootstrap</a></li>
-        <li><a href="//www.udemy.com/certificate/UC-4B71AONA/" target="_blank">Practical PHP: Master the Basics and Code Dynamic Websites</a></li>
-        <li><a href="//www.udemy.com/certificate/UC-2G9TC9H0/" target="_blank">The Complete Web Developer Course</a></li>
-        <li><a href="//www.codeschool.com/users/874984/badges/40" target="_blank">CSS Cross-Country</a></li>
-        <li><a href="//www.codeschool.com/users/874984/badges/191" target="_blank">Try jQuery</a></li>
-        <li><a href="//www.codeschool.com/users/874984/badges/296" target="_blank">JavaScript Road Trip</a></li>
-        <li><a href="//www.codeschool.com/users/874984/badges/277" target="_blank">Fundamentals of Design</a></li>
-        <li><a href="//www.codeschool.com/users/874984/badges/24" target="_blank">Try Ruby</a></li>
-        <li><a href="//www.codeschool.com/users/874984/badges/133" target="_blank">Rails for Zombies Redux</a></li>
-        <li><a href="//www.codeschool.com/users/874984/badges/121" target="_blank">Try Git</a></li>
+
+        {% for course in site.data.settings.courses %}
+        <li><a href="{{ course.link }}" target="_blank">{{ course.name }}</a> - {{ course.date }}</li>
+        {% endfor %}
+
       </ul>
     </div>
 
