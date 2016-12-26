@@ -66,6 +66,11 @@ projects:
      thumb-extension: .jpg,
      width: 3,
      tags: [javascript, top]}
+  - {name: Portfolio in WordPress,
+     folder: lhp,
+     thumb-extension: .jpg,
+     width: 4,
+     tags: [wordpress, htmlcss, php]}
   - {name: Bootstrap to WordPress,
      folder: b2w,
      thumb-extension: .jpg,
