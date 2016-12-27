@@ -10,28 +10,30 @@ top-btn: true
       {{ page.title }}
     </h1>
 
-    <img id="lani" src="../../assets/images/lani.png" width="200" height="200" alt="Picture of Lani Huang">
-    <p>Hi! I’m Lani. I live in Los Angeles, California.</p>
+    <div class="content">
+      <img id="lani" src="../../assets/images/lani.png" width="200" height="200" alt="Picture of Lani Huang">
+      <p>Hi! I’m Lani. I live in Los Angeles, California.</p>
 
-    <p>I’m a recent graduate with a bachelor's degree in Electrical Engineering, concentrating on Software Systems.</p>
+      <p>I’m a recent graduate with a bachelor's degree in Electrical Engineering, concentrating on Software Systems.</p>
 
-    <p>Having enjoyed working on programming assignments from my coursework, I became interested in front-end web development. I’ve learned a lot from online resources like <a href="//www.theodinproject.com" target="_blank">The Odin Project</a>, <a href="//www.codeschool.com" target="_blank">Code School</a> and <a href="//www.udemy.com" target="_blank">Udemy</a>. Check out the <a href="/projects/">projects</a> I’ve made along the way.</p>
+      <p>Having enjoyed working on programming assignments from my coursework, I became interested in front-end web development. I’ve learned a lot from online resources like <a href="//www.theodinproject.com" target="_blank">The Odin Project</a>, <a href="//www.codeschool.com" target="_blank">Code School</a> and <a href="//www.udemy.com" target="_blank">Udemy</a>. Check out the <a href="/projects/">projects</a> I’ve made along the way.</p>
 
-    <p>When I’m not making stuff for the web, I watch some cat videos, go on a hike, listen to Jazz Rap, and strum my guitar.</p>
+      <p>When I’m not making stuff for the web, I watch some cat videos, go on a hike, listen to Jazz Rap, and strum my guitar.</p>
 
-    <h3>Online Education</h3>
-    <div class="course-list">
-      <ul>
+      <h3>Online Education</h3>
+      <div class="course-list">
+        <ul>
 
-        {% for course in site.data.settings.courses %}
-        <li><a href="{{ course.link }}" target="_blank">{{ course.name }}</a> - {{ course.date }}</li>
-        {% endfor %}
+          {% for course in site.data.settings.courses %}
+          <li><a href="{{ course.link }}" target="_blank">{{ course.name }}</a> - {{ course.date }}</li>
+          {% endfor %}
 
-      </ul>
-    </div>
+        </ul>
+      </div>
 
-    <div class="btn-container">
-      <a class="btn btn-default resume-btn" href="/assets/lani-huang-resume.pdf" target="_blank">Download My Résumé</a>
+      <div class="btn-container">
+        <a class="btn btn-default resume-btn" href="/assets/lani-huang-resume.pdf" target="_blank">Download My Résumé</a>
+      </div>
     </div>
 
   </article>
