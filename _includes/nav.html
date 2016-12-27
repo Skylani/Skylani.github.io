@@ -3,7 +3,7 @@
   {% assign url = page.url|remove:'index.html' %}
   {% for link in site.navigation %}
   <li>
-    <a {% if url == link.url %}class="active"{% endif %} href="{{ link.url }}" title="{{ link.title }}">{{ link.title }}</a>
+    <a {% if (url == link.url or (link.url == '/blog/' and url contains link.url)) %}class="active"{% endif %} href="{{ link.url }}" title="{{ link.title }}">{{ link.title }}</a>
   </li>
   {% endfor %}
 </ul>
