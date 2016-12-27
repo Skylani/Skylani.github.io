@@ -15,7 +15,6 @@ Since I deployed my Bitnami WordPress Multisite on AWS, I'll share **some tips o
 
 - Connecting to the server using Transmit or SSH in Terminal
 - Making Multisite use subdirectory instead of subdomain
-- Some useful links
 
 If you want to follow these instructions, you should've already set up a WordPress site on AWS following this [tutorial](https://aws.amazon.com/getting-started/tutorials/launch-a-wordpress-website/){:target="_blank"} by Amazon. Note: in step 6, be sure to create a new key pair or choose an existing one. We'll need that to connect to the server.
 
@@ -129,7 +128,15 @@ Open the file `/opt/bitnami/apps/wordpress/conf/httpd-app.conf`, and look for th
 
 Change `AllowOverride None` to `AllowOverride All`.
 
+Restart the Apache server after change:
+
+```bash
+sudo ~/stack/ctlscript.sh restart apache
+```
+
 Now, the sever will read the `.htaccess` file.
+
+
 
 
 
