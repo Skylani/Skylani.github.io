@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Tips on Setting up Bitnami WordPress on AWS</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css?family=Raleway:400,400i,700" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="/assets/all.css">
+<body>
+  <header id="header">
+    <div class="container">
+      <nav class="desktop-nav">
+        
+<ul class="nav">
+  
+  
+  <li>
+    <a  href="/" title="Home">Home</a>
+  </li>
+  
+  <li>
+    <a  href="/about/" title="About">About</a>
+  </li>
+  
+  <li>
+    <a  href="/projects/" title="Projects">Projects</a>
+  </li>
+  
+  <li>
+    <a class="active" href="/blog/" title="Blog">Blog</a>
+  </li>
+  
+  <li>
+    <a  href="/contact/" title="Contact">Contact</a>
+  </li>
+  
+</ul>
+      </nav>
+      <div id="overlay" class="overlay">
+        <nav>
+          
+<ul class="nav">
+  
+  
+  <li>
+    <a  href="/" title="Home">Home</a>
+  </li>
+  
+  <li>
+    <a  href="/about/" title="About">About</a>
+  </li>
+  
+  <li>
+    <a  href="/projects/" title="Projects">Projects</a>
+  </li>
+  
+  <li>
+    <a class="active" href="/blog/" title="Blog">Blog</a>
+  </li>
+  
+  <li>
+    <a  href="/contact/" title="Contact">Contact</a>
+  </li>
+  
+</ul>
+        </nav>
+      </div>
+    </div>
+    <div id="toggle" class="button-container">
+      <span class="top"></span>
+      <span class="middle"></span>
+      <span class="bottom"></span>
+    </div>
+  </header>
+
+  <div id="top"></div>
+
+  <div class="container">
+<div class="page">
+  <article class="post">
+    <h1 class="post-title">Tips on Setting up Bitnami WordPress on AWS</h1>
+    <div class="meta">
+      <span class="date">24 Dec 2016</span>
+      
+        <a class="meta-cat" href="/blog/categories/#web-dev">Web-Dev</a>
+      
+    </div>
+    <div class="content">
+      <p>After creating two WordPress themes, I wondered how I can show a different theme of a WP site without creating two different WP sites. Multisite is the solution that I found.
+<!--more--></p>
+
+<blockquote>
+  <p><strong>Multisite</strong> is a feature of WordPress 3.0 and later versions that allows multiple virtual sites to share a single WordPress installation. When the multisite feature is activated, the original WordPress site can be converted to support a network of sites.</p>
+</blockquote>
+
+<p>Since I deployed my Bitnami WordPress Multisite on AWS, I’ll share <strong>some tips on the setup</strong>. These tips includes:</p>
+
+<ul>
+  <li>Connecting to the server using Transmit or SSH in Terminal</li>
+  <li>Making Multisite use subdirectory instead of subdomain</li>
+</ul>
+
+<p>If you want to follow these instructions, you should’ve already set up a WordPress site on AWS following this <a href="https://aws.amazon.com/getting-started/tutorials/launch-a-wordpress-website/" target="_blank">tutorial</a> by Amazon. Note: in step 6, be sure to create a new key pair or choose an existing one. We’ll need that to connect to the server.</p>
+
+<p>Now, let’s get down to the details.</p>
+
+<h2 id="connecting-to-the-server">Connecting to the server</h2>
+
+<p>In order to edit files on the server, you need to connect to it and there are two ways of doing that. You can either connect using a file transfer application, or connect using SSH in Terminal.</p>
+
+<h3 id="using-a-file-transfer-application">Using a file transfer application</h3>
+
+<p>Here I use a file transfer app called <strong>Transmit</strong>.</p>
+
+<p>Fill out the connection setting as below whereas replacing your own server and dragging in your key pair for the password.</p>
+
+<figure>
+    <img src="/assets/images/blog/2016-12-24-tips-on-setting-up-bitnami-wordpress-on-aws/transmit.jpg" />
+    <figcaption>Transmit SFTP connection setting</figcaption>
+</figure>
+
+<h3 id="using-ssh-in-terminal">Using SSH in Terminal</h3>
+
+<p>The following instructions are given by Amazon. You can find them by selecting an instance in AWS Console Home, then click “Connect”.</p>
+
+<figure>
+    <img src="/assets/images/blog/2016-12-24-tips-on-setting-up-bitnami-wordpress-on-aws/connect.png" />
+    <figcaption>AWS: Connect to your instance instructions</figcaption>
+</figure>
+
+<p>In the example above, replace it with your key pair’s location, username and server accordingly, then run the command.</p>
+
+<p>For example, mine is this:</p>
+
+<div class="language-bash highlighter-rouge"><pre class="highlight"><code>ssh -i ~/.ssh/aws-wordpress-key-pair.pem bitnami@ec2-54-89-116-145.compute-1.amazonaws.com
+</code></pre>
+</div>
+
+<h2 id="making-multisite-use-subdirectory-instead-of-subdomain">Making Multisite use subdirectory instead of subdomain</h2>
+
+<p>In default, Multisite is in subdomain mode. However, In my case, I want my two demo sites to be two subdirectories within the main directory. i.e. <a href="http://wp.lanihuang.com" target="_blank">wp.lanihuang.com</a> is the main site, while <a href="http://wp.lanihuang.com/lhp" target="_blank">wp.lanihuang.com/lhp</a> and <a href="http://wp.lanihuang.com/b2w" target="_blank">wp.lanihuang.com/b2w</a> are the two demo sites.</p>
+
+<p>In order to achieve this, you need to do 3 things:</p>
+
+<ul>
+  <li>Turn off subdomain mode</li>
+  <li>Change Multisite’s URL rewrite rules</li>
+  <li>Enable reading of the <code class="highlighter-rouge">.htaccess</code> file</li>
+</ul>
+
+<p><strong>ATTENTION: Backup setting files before modifying them.</strong></p>
+
+<h3 id="turn-off-subdomain-mode">Turn off subdomain mode</h3>
+
+<p>After connecting to the server, you can find the WP folder at <code class="highlighter-rouge">/opt/bitnami/apps/wordpress/htdocs/</code>.</p>
+
+<p>In <code class="highlighter-rouge">wp-config.php</code>, find the following line:</p>
+
+<div class="language-php highlighter-rouge"><pre class="highlight"><code>define( 'SUBDOMAIN_INSTALL', true );
+</code></pre>
+</div>
+
+<p>Change that to:</p>
+
+<div class="language-php highlighter-rouge"><pre class="highlight"><code>define( 'SUBDOMAIN_INSTALL', false );
+</code></pre>
+</div>
+
+<p>Then, you’ll be able to create subdirectory sites in the admin area.</p>
+
+<h3 id="change-multisites-url-rewrite-rules">Change Multisite’s URL rewrite rules</h3>
+
+<p>Open <code class="highlighter-rouge">.htaccess</code> file, and replace everything with:</p>
+
+<div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="c"># BEGIN WordPress</span>
+&lt;IfModule mod_rewrite.c&gt;
+RewriteEngine On
+RewriteBase /
+RewriteRule ^index<span class="se">\.</span>php<span class="nv">$ </span>- <span class="o">[</span>L]
+
+<span class="c"># uploaded files</span>
+RewriteRule ^<span class="o">([</span>_0-9a-zA-Z-]+/<span class="o">)</span>?files/<span class="o">(</span>.+<span class="o">)</span> wp-includes/ms-files.php?file<span class="o">=</span><span class="nv">$2</span> <span class="o">[</span>L]
+
+<span class="c"># add a trailing slash to /wp-admin</span>
+RewriteRule ^<span class="o">([</span>_0-9a-zA-Z-]+/<span class="o">)</span>?wp-admin<span class="nv">$ $1wp</span>-admin/ <span class="o">[</span><span class="nv">R</span><span class="o">=</span>301,L]
+
+RewriteCond %<span class="o">{</span>REQUEST_FILENAME<span class="o">}</span> -f <span class="o">[</span>OR]
+RewriteCond %<span class="o">{</span>REQUEST_FILENAME<span class="o">}</span> -d
+RewriteRule ^ - <span class="o">[</span>L]
+RewriteRule  ^[_0-9a-zA-Z-]+/<span class="o">(</span>wp-<span class="o">(</span>content|admin|includes<span class="o">)</span>.<span class="k">*</span><span class="o">)</span> <span class="nv">$1</span> <span class="o">[</span>L]
+RewriteRule  ^[_0-9a-zA-Z-]+/<span class="o">(</span>.<span class="k">*</span><span class="se">\.</span>php<span class="o">)</span><span class="nv">$ $1</span> <span class="o">[</span>L]
+RewriteRule . index.php <span class="o">[</span>L]
+&lt;/IfModule&gt;
+<span class="c"># END WordPress</span>
+</code></pre>
+</div>
+
+<p>This basically enables WP to redirect to the subdirectory sites.</p>
+
+<h3 id="enable-reading-of-the-htaccess-file">Enable reading of the <code class="highlighter-rouge">.htaccess</code> file</h3>
+
+<p>Last but not least, you have to manually enable the <code class="highlighter-rouge">.htaccess</code> file because it is not enabled by default on Amazon Linux.</p>
+
+<p>Open the file <code class="highlighter-rouge">/opt/bitnami/apps/wordpress/conf/httpd-app.conf</code>, and look for the following snippet:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>...
+&lt;Directory "/opt/bitnami/apps/wordpress/htdocs"&gt;
+    Options +MultiViews +FollowSymLinks
+    AllowOverride None
+    &lt;IfVersion &lt; 2.3 &gt;
+        Order allow,deny
+        Allow from all
+    &lt;/IfVersion&gt;
+    &lt;IfVersion &gt;= 2.3&gt;
+        Require all granted
+    &lt;/IfVersion&gt;
+...
+</code></pre>
+</div>
+
+<p>Change <code class="highlighter-rouge">AllowOverride None</code> to <code class="highlighter-rouge">AllowOverride All</code>.</p>
+
+<p>Restart the Apache server after change:</p>
+
+<div class="language-bash highlighter-rouge"><pre class="highlight"><code>sudo ~/stack/ctlscript.sh restart apache
+</code></pre>
+</div>
+
+<p>Now, the sever will read the <code class="highlighter-rouge">.htaccess</code> file.</p>
+
+
+    </div>
+    
+  </article>
+
+  <div class="posts-nav">
+    
+    
+      <a href="/blog/web-dev/2016/12/19/deploying-jsp-web-app-on-heroku.html" class="prev">Deploying JSP Web App on Heroku &raquo;</a>
+    
+  </div>
+</div>
+</div>
+
+  <a class="back-to-top" href="#top">
+  <span class="left"></span>
+  <span class="right"></span>
+</a>
+
+  <!-- Google Analytics -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-79843782-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/headroom/0.9.3/headroom.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/headroom/0.9.3/jQuery.headroom.min.js"></script>
+  <script src="https://unpkg.com/isotope-layout@3.0/dist/isotope.pkgd.min.js"></script>
+  <script src="https://npmcdn.com/imagesloaded@4.1/imagesloaded.pkgd.min.js"></script>
+  <script src="/assets/js/script.js"></script>
+</body>
+</html>
