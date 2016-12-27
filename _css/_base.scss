@@ -85,7 +85,7 @@ strong {
 }
 code {
   font-family: monospace;
-  font-size: rem(16);
+  font-size: inherit;
   background-color: $light-grey;
   padding: 0 5px;
 }
@@ -600,6 +600,11 @@ form {
 // Blog =======================
 .post {
   margin-bottom: 80px;
+}
+.content {
+  h1, h2, h3, h4 {
+    padding-top: rem(40);
+  }
 }
 .post-title {
   margin-bottom: 10px;
