@@ -3,12 +3,9 @@ $browser-context: 19; // Default
 $black: #333;
 $dark-grey: #555555;
 $grey: #999999;
-// $light-grey: #B1B4B4;
-// $light-grey: #BFBFBF;
-$light-grey: #ECECEC;
-$color-background: #F5F5F5;
+
+$light-grey: #D2D7D3;
 $color-active: #FFF;
-$color-link: #FFF;
 
 $button-height: 27px;
 $button-width: 35px;
@@ -86,11 +83,21 @@ a {
 strong {
   font-weight: bold;
 }
+code {
+  font-family: monospace;
+  font-size: rem(16);
+  background-color: $light-grey;
+  padding: 0 5px;
+}
 .highlight {
+  margin: rem(10) 0;
   padding: rem(16);
   font-family: monospace;
   overflow: auto;
   font-size: rem(16);
+  code {
+    background-color: inherit;
+  }
 }
 figure {
   padding: rem(15) 0;
@@ -133,7 +140,16 @@ article {
   }
   @include content-link;
 }
-
+blockquote {
+  border-left: 10px solid $light-grey;
+  margin: 1em 10px;
+  padding: 0 10px;
+  quotes: "\201C""\201D""\2018""\2019";
+}
+blockquote p {
+  display: inline;
+  padding: 0;
+}
 input, textarea {
   display: block;
   width: 100%;

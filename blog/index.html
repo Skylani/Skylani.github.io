@@ -3,38 +3,40 @@ layout: default
 title: Lani's Blog
 ---
 
-<div class="page" id="blog">
-   <!-- This loops through the paginated posts -->
-  {% for post in paginator.posts %}
-    <article class="post">
-      <h1 class="post-title"><a href="{{ post.url }}" data-underline>{{ post.title }}</a></h1>
-      <div class="meta">
-        <span class="date">{{ post.date | date_to_string }}</span>
-        {% for ct in post.categories %}
-          <a class="meta-cat" href="/blog/categories/#{{ ct | slugify }}">{{ ct }}</a>
-        {% endfor %}
-      </div>
-      <div class="content">
-        {{ post.excerpt }}
+<div class="container">
+  <div class="page" id="blog">
+     <!-- This loops through the paginated posts -->
+    {% for post in paginator.posts %}
+      <article class="post">
+        <h1 class="post-title"><a href="{{ post.url }}" data-underline>{{ post.title }}</a></h1>
+        <div class="meta">
+          <span class="date">{{ post.date | date_to_string }}</span>
+          {% for ct in post.categories %}
+            <a class="meta-cat" href="/blog/categories/#{{ ct | slugify }}">{{ ct }}</a>
+          {% endfor %}
+        </div>
+        <div class="content">
+          {{ post.excerpt }}
 
-      </div>
-      <div class="read-more">
-        <a href="{{ site.baseurl }}{{ post.url }}">Read More</a>
-      </div>
-    </article>
-  {% endfor %}
+        </div>
+        <div class="read-more">
+          <a href="{{ site.baseurl }}{{ post.url }}">Read More</a>
+        </div>
+      </article>
+    {% endfor %}
 
-  <!-- Pagination links -->
-  <div class="pagination">
-    {% if paginator.previous_page %}
-      <a href="{{ paginator.previous_page_path }}" class="newer">&laquo; Newer</a>
-    {% else %}
-      <span class="newer">&laquo; Newer</span>
-    {% endif %}
-    {% if paginator.next_page %}
-      <a href="{{ paginator.next_page_path }}" class="older">Older &raquo;</a>
-    {% else %}
-      <span class="older">Older &raquo;</span>
-    {% endif %}
+    <!-- Pagination links -->
+    <div class="pagination">
+      {% if paginator.previous_page %}
+        <a href="{{ paginator.previous_page_path }}" class="newer">&laquo; Newer</a>
+      {% else %}
+        <span class="newer">&laquo; Newer</span>
+      {% endif %}
+      {% if paginator.next_page %}
+        <a href="{{ paginator.next_page_path }}" class="older">Older &raquo;</a>
+      {% else %}
+        <span class="older">Older &raquo;</span>
+      {% endif %}
+    </div>
   </div>
 </div>
