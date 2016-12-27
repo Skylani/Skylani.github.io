@@ -547,14 +547,17 @@ span.line {
 }
 
 // About ======================
-#lani {
+#avatar {
   float: right;
   width: 150px;
   height: 150px;
   margin: 20px 30px 30px 40px;
 }
 
-
+#about .btns-container {
+  text-align: center;
+  margin-top: rem(40);
+}
 
 // Contact ====================
 #contact {
@@ -712,7 +715,7 @@ form {
   }
 
   // about
-  #lani {
+  #avatar {
     float: none;
     display: block;
     margin-left: auto;
