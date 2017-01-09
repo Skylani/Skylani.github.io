@@ -55,7 +55,7 @@ projects:
      folder: lani-huang,
      thumb-extension: .jpg,
      width: 3,
-     tags: [htmlcss, jekyll, javascript]}
+     tags: [htmlcss, javascript]}
   - {name: Minesweeper,
      folder: minesweeper,
      thumb-extension: .jpg,
@@ -75,7 +75,12 @@ projects:
      folder: b2w,
      thumb-extension: .jpg,
      width: 4,
-     tags: [wordpress, htmlcss, php, bootstrap]}
+     tags: [wordpress, htmlcss, php]}
+  - {name: Search Movies,
+     folder: search-movies,
+     thumb-extension: .jpg,
+     width: 3,
+     tags: [javascript, top]}
   - {name: Golden Age Village,
      folder: golden-age-village,
      thumb-extension: .jpg,
@@ -127,10 +132,6 @@ project-tags:
      class: javascript}
   - {name: HTML/CSS,
      class: htmlcss}
-  - {name: Jekyll,
-     class: jekyll}
-  - {name: Bootstrap,
-     class: bootstrap}
   - {name: Ruby,
      class: ruby}
   - {name: WordPress,
