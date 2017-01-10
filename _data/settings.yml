@@ -55,17 +55,17 @@ projects:
      folder: lani-huang,
      thumb-extension: .jpg,
      width: 3,
-     tags: [htmlcss, javascript]}
+     tags: [htmlcss, javascript, jquery]}
   - {name: Minesweeper,
      folder: minesweeper,
      thumb-extension: .jpg,
      width: 3,
-     tags: [htmlcss, javascript, top]}
+     tags: [htmlcss, javascript, jquery, top]}
   - {name: Snake Game,
      folder: snake,
      thumb-extension: .jpg,
      width: 3,
-     tags: [javascript, top]}
+     tags: [javascript, jquery, top]}
   - {name: Portfolio in WordPress,
      folder: lhp,
      thumb-extension: .jpg,
@@ -80,7 +80,7 @@ projects:
      folder: search-movies,
      thumb-extension: .jpg,
      width: 3,
-     tags: [javascript, top]}
+     tags: [javascript, jquery, top]}
   - {name: Golden Age Village,
      folder: golden-age-village,
      thumb-extension: .jpg,
@@ -90,7 +90,7 @@ projects:
      folder: calculator,
      thumb-extension: .jpg,
      width: 2,
-     tags: [javascript, top]}
+     tags: [javascript, jquery, top]}
   - {name: Tic Tac Toe,
      folder: tic-tac-toe,
      thumb-extension: .jpg,
@@ -110,7 +110,17 @@ projects:
      folder: sketchpad,
      thumb-extension: .jpg,
      width: 2,
+     tags: [javascript, jquery, top]}
+  - {name: Image Slider,
+     folder: image-slider,
+     thumb-extension: .svg,
+     width: 3,
      tags: [javascript, top]}
+  - {name: Form Validation,
+     folder: form-validation,
+     thumb-extension: .svg,
+     width: 2,
+     tags: [javascript, jquery, top]}
   - {name: The Next Web Clone,
      folder: tnw-clone,
      thumb-extension: .jpg,
@@ -128,8 +138,10 @@ project-tags:
      class: all}
   - {name: The Odin Project,
      class: top}
-  - {name: Javascript,
+  - {name: JavaScript,
      class: javascript}
+  - {name: jQuery,
+     class: jquery}
   - {name: HTML/CSS,
      class: htmlcss}
   - {name: Ruby,
