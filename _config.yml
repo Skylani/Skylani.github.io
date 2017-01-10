@@ -1,3 +1,4 @@
+url:               http://lanihuang.com
 name:              Lani Huang
 permalink:         /blog/:categories/:year/:month/:day/:title.html
 gems:              ['jekyll-sitemap', 'jekyll-paginate']
