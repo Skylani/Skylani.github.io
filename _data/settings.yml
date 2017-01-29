@@ -1,4 +1,7 @@
 courses:
+  - {name: 'Modern React with Redux',
+    link: '//www.udemy.com/certificate/UC-OK083PRL/',
+    date: 01/28/2017}
   - {name: Powering Up With React,
     link: '//www.codeschool.com/users/874984/badges/624',
     date: 11/20/2016}
