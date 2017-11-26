@@ -59,6 +59,11 @@ projects:
      thumb-extension: .jpg,
      width: 3,
      tags: [htmlcss, javascript, jquery]}
+  - {name: Voting App,
+     folder: voting-app,
+     thumb-extension: .svg,
+     width: 3,
+     tags: [htmlcss, javascript]}
   - {name: Minesweeper,
      folder: minesweeper,
      thumb-extension: .jpg,
