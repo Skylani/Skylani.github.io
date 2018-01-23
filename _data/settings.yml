@@ -83,12 +83,12 @@ projects:
      folder: lhp,
      thumb-extension: .jpg,
      width: 4,
-     tags: [wordpress, htmlcss, php]}
+     tags: [htmlcss, other]}
   - {name: Bootstrap to WordPress,
      folder: b2w,
      thumb-extension: .jpg,
      width: 4,
-     tags: [wordpress, htmlcss, php]}
+     tags: [htmlcss, other]}
   - {name: Search Movies,
      folder: search-movies,
      thumb-extension: .jpg,
@@ -98,7 +98,7 @@ projects:
      folder: golden-age-village,
      thumb-extension: .jpg,
      width: 3,
-     tags: [wordpress, htmlcss]}
+     tags: [htmlcss, other]}
   - {name: Calculator,
      folder: calculator,
      thumb-extension: .jpg,
@@ -113,12 +113,12 @@ projects:
      folder: mastermind,
      thumb-extension: .jpg,
      width: 4,
-     tags: [ruby, top]}
+     tags: [top, other]}
   - {name: Franklin's Fine Dining,
      folder: franklins-fine-dining,
      thumb-extension: .jpg,
      width: 3,
-     tags: [php]}
+     tags: [other]}
   - {name: Sketchpad,
      folder: sketchpad,
      thumb-extension: .jpg,
@@ -143,7 +143,7 @@ projects:
      folder: hangman,
      thumb-extension: .gif,
      width: 3,
-     tags: [ruby, top]}
+     tags: [top, other]}
 
 
 project-tags:
@@ -159,9 +159,6 @@ project-tags:
      class: jquery}
   - {name: HTML/CSS,
      class: htmlcss}
-  - {name: Ruby,
-     class: ruby}
-  - {name: WordPress,
-     class: wordpress}
-  - {name: PHP,
-     class: php}
+  - {name: Other,
+     class: other}
+  
