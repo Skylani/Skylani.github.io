@@ -69,6 +69,11 @@ projects:
      thumb-extension: .jpg,
      width: 3,
      tags: [htmlcss, javascript, top]}
+  - {name: Game of Life,
+     folder: game-of-life,
+     thumb-extension: .svg,
+     width: 2,
+     tags: [htmlcss, javascript, fcc]}
   - {name: Snake Game,
      folder: snake,
      thumb-extension: .jpg,
@@ -144,6 +149,8 @@ projects:
 project-tags:
   - {name: All,
      class: all}
+  - {name: freeCodeCamp,
+     class: fcc}
   - {name: The Odin Project,
      class: top}
   - {name: JavaScript,
